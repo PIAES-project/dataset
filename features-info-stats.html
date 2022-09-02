@@ -1,0 +1,1151 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Feature information and statistics</title>
+
+    <style>
+        html,
+        body,
+        table {
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            font-size: 13px;
+            margin: 0px;
+            padding: 0;
+            border: 0 none;
+        }
+
+        table {
+            margin-left: -6px;
+            border-spacing: 0px;
+            -webkit-border-horizontal-spacing: 0px;
+            -webkit-border-vertical-spacing: 0px;
+        }
+
+        table,
+        p {
+            padding: 10px;
+        }
+
+        div.selected,
+        div.normal {
+            margin: 5px;
+        }
+
+        div.selected {
+            background: white;
+        }
+
+
+        div.content {
+            margin-left: 15px;
+        }
+
+        div.content h1 {
+            font-size: large;
+        }
+
+        div.content h2 {
+            font-size: small;
+            font-weight: normal;
+        }
+
+        th,
+        td {
+            text-align: left;
+            padding: 2px 6px 2px 6px;
+            color: black;
+            border-bottom: 1px solid;
+            background: transparent;
+            text-align: left;
+            vertical-align: middle;
+        }
+
+        th {
+            font-weight: bold;
+        }
+
+        p {
+            color: gray;
+            margin: 0px;
+            padding: 0px;
+            font-size: x-small;
+        }
+
+        img {
+            display: block;
+            margin: auto;
+            max-height: 20cm;
+        }
+
+        .tooltip {
+            position: relative;
+            display: inline-block;
+            color: darkblue;
+            width: 100%;
+            cursor: 'context-menu';
+        }
+
+        .tooltip .tooltiptext {
+            visibility: hidden;
+            width: 100%;
+            background-color: #777;
+            color: #fff;
+            text-align: left;
+            border-radius: 6px;
+            padding: 10px;
+            position: absolute;
+            z-index: 1;
+            bottom: 120%;
+            left: -5%;
+            margin-left: 0px;
+            opacity: 0;
+            transition: opacity 0.3s;
+            font-size: smaller;
+        }
+
+        .tooltip .tooltiptext::after {
+            content: "";
+            position: absolute;
+            top: 100%;
+            left: 20px;
+            margin-left: -5px;
+            border-width: 5px;
+            border-style: solid;
+            border-color: #777 transparent transparent transparent;
+        }
+
+        .tooltip:hover .tooltiptext {
+            visibility: visible;
+            opacity: 1;
+
+        }
+    </style>
+
+
+</head>
+
+<body>
+    <div class="selected">
+        <section class="section">
+            <div class="content">
+                <h1>
+                    Dataset “Predict students' dropout and academic success”
+                </h1>
+                <h2>
+                    The dataset includes information known at the time of student enrollment (academic path,
+                    demographics, and macroeconomics and socioeconomics factors) and
+                    the student's academic performance at the end of the first and second semesters. <br /><br />
+                    The data is used to build classification models to predict students' dropout and academic success.
+                    <br /><br />
+                    The problem is formulated as a three-category classification task (dropout, enrolled, and graduate)
+                    at the end of the normal duration of the course.<br /> <br />
+
+                    The dataset contained 4,424 records without missing values and with 35 variables, where each record
+                    represents an individual student. <br />
+                </h2>
+
+                <br /><br />
+                <i>Move the mouse over the name of the variable to get description of possible values.</i>
+                <table>
+                    <tbody>
+                        <tr>
+                            <th>Group</th>
+                            <th>Variable</th>
+                            <th>Histogram</th>
+                            <th>Mean</th>
+                            <th>Median</th>
+                            <th>Coefficient<br />of variation</th>
+                            <th>Min.</th>
+                            <th>Max.</th>
+                        </tr>
+
+                        <!-- Demographic data -->
+                        <tr>
+                            <td>Demographic data</td>
+                            <td>
+                                <div class='tooltip'>Marital status
+                                    <span class="tooltiptext">
+                                        1 - Single<br />
+                                        2 - Married<br />
+                                        3 - Widower<br />
+                                        4 - Divorced<br />
+                                        5 - Facto union<br />
+                                        6 - Legally separated<br />
+                                    </span>
+                                    <p>(numeric/discrete)</p>
+                                </div>
+                            </td>
+                            <td><img style="max-height: 50px"
+                                    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAUwAAADnCAIAAAD6oPiRAAAACXBIWXMAAA7EAAAOxAGVKw4bAAADnklEQVR4nO3cPUorYQCG0c/4g2MhTGFjmS24/yVkC5Za2FkoKCG381oqSZjweE41RQZeEh5mJoSc7Xa7AXStlh4AHJfIIU7kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KIEznEiRziRA5xIoc4kUOcyCFO5BAncogTOcSJHOJEDnEihziRQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFDnMgh7mLP8zebzUF27Gme5/V6vfQKOEWu5BAncogTOcSJHOJEDnEihziRQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KIEznEiRziRA5xIoc4kUOcyCFO5BAncogTOcSJHOJEDnEihziRQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KIEznEiRziRA5xIoc4kUOcyCFO5BAncogTOcSJHOJEDnEihziRQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KIEznEiRziRA5xIoc4kUOcyCFO5BAncogTOcSJHOJEDnEihziRQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KIEznEiRziRA5xIoc4kUOcyCFO5BAncogTOcSJHOJEDnEihziRQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KIEznEiRziRA5xIoc4kUOcyCFO5BAncogTOcSJHOJEDnEihziRQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KIEznEiRziRA5xIoc4kUOcyCFO5BAncogTOcSJHOJEDnEihziRQ5zIIU7kECdyiBM5xIkc4kQOcRdLDzi87Xb7+fm59Ioxxri8vDw/P196BX9dMPLX19fHx8elV4wxxnq9nud56RX8dW7XIU7kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KIC/52nZ97enpaesIYY0zT5Ef+xyPyP+35+XnpCWOMMc+zyI/H7TrEuZJzWt7e3l5eXpZeMcYYd3d3Nzc3S684gH0jv7+/P8iOPV1fX38dT9N0Iqumafo6/vj42G63C4758n3VibxR3z++1Wp1dXW14Jgvq9X/+9z39/cT+SeS29vb355yttvtjjEFOBGeySFO5BD3u2fyzWZzpB3Azz08PPz8xa7kEOeLN4hzJYc4kUOcyCFO5BAncogTOcSJHOJEDnEihziRQ5zIIU7kECdyiBM5xP0DbIA2ZWibS+QAAAAASUVORK5CYII=">
+                            </td>
+                            <td>1.18</td>
+                            <td>1</td>
+                            <td>0.51</td>
+                            <td>1</td>
+                            <td>6</td>
+                        </tr>
+                        <tr>
+                            <td>Demographic data</td>
+                            <td>
+                                <div class='tooltip'>Nationality
+                                    <span class="tooltiptext">
+                                        1 - Portuguese<br />
+                                        2 - German<br />
+                                        3 - Spanish<br />
+                                        4 - Italian<br />
+                                        5 - Dutch<br />
+                                        6 - English<br />
+                                        7 - Lithuanian<br />
+                                        8 - Angolan<br />
+                                        9 - Cape Verdean<br />
+                                        10 - Guinean<br />
+                                        11 - Mozambican<br />
+                                        12 - Santomean<br />
+                                        13 - Turkish<br />
+                                        14 - Brazilian<br />
+                                        15 - Romanian<br />
+                                        16 - Moldova (Republic of)<br />
+                                        17 - Mexican<br />
+                                        18 - Ukrainian<br />
+                                        19 - Russian<br />
+                                        20 - Cuban<br />
+                                        21 - Colombian
+                                    </span>
+                                </div>
+                                <p>(numeric/discrete)</p>
+                            </td>
+                            <td><img style="max-height: 50px"
+                                    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAUwAAADnCAIAAAD6oPiRAAAACXBIWXMAAA7EAAAOxAGVKw4bAAADnklEQVR4nO3YvU7rWBSAUTtOQEpDQ8UbpOb9HyEFzwLiNzhTMIpuyegexOjTWtUpkq0txV8sez6fzxPQtfntBYCfJXKIEznEiRziRA5xIoc4kUOcyCFO5BAncogTOcSJHOJEDnEihziRQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KIEznEiRziRA5xIoc4kUOcyCFO5BAncojb/uX3j8fjkD2madrv94fDYdQ04Is7OcSJHOJEDnEihziRQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KIEznEiRziRA5xIoc4kUOcyCFO5BAncogTOcSJHOJEDnEihziRQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KIEznEiRziRA5xIoc4kUOcyCFO5BAncogTOcSJHOJEDnEihziRQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KIEznEiRziRA5xIoc4kUOcyCFO5BAncogTOcSJHOJEDnEihziRQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KIEznEiRziRA5xIoc4kUOcyCFO5BAncogTOcSJHOJEDnEihziRQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KIEznEiRziRA5xIoc4kUOcyCFO5BAncogTOcSJHOJEDnEihziRQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KIEznEiRziRA5xIoc4kUOcyCFO5BAncogTOcSJHOJEDnEihziRQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KIEznEiRziRA5xIoc4kUOcyCFO5BAncogTOcSJHOJEDnEih7jtby/AbzqdTqNGzfO8LMuoaQwk8mHWdV3XddS0ZVnmef46Pz09fX5+jpp8c3NzOT88PIwau9/vD4fDqGkM9LeR393dDdljmqbdbnc5r+v6/v4+avKyLJfhY1PcbDabzb+PPI+Pj8/Pz6Mm397eXnZ+fX39+PgYNfnPyH/u53t5eRk4+erq6ut8Op3e3t5GTb6+vt5ut5fJAy+M3W53+Y8eOHaapsv19n3z+XweuAHwf+PFG8SJHOL+2zP58Xj8oT2A77u/v//+h93JIc6LN4hzJ4c4kUOcyCFO5BAncogTOcSJHOJEDnEihziRQ5zIIU7kECdyiBM5xP0D9UNQnwfG7J0AAAAASUVORK5CYII=">
+                            </td>
+                            <td>1.25</td>
+                            <td>1</td>
+                            <td>1.39</td>
+                            <td>1</td>
+                            <td>21</td>
+                        </tr>
+                        <tr>
+                            <td>Demographic data</td>
+                            <td>
+                                <div class='tooltip'>Displaced
+                                    <span class="tooltiptext">
+                                        1 - yes<br />
+                                        0 - no
+                                    </span>
+                                </div>
+                                <p>(numeric/binary)</p>
+                            </td>
+                            <td><img style="max-height: 50px"
+                                    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAUwAAADnCAIAAAD6oPiRAAAACXBIWXMAAA7EAAAOxAGVKw4bAAADCklEQVR4nO3d0YmDQABF0c2SKkwZ038JlhFIF6aFiJqBm3O+IzwIl1F/vG3b9gd0/c8eAFxL5BAncogTOcSJHOJEDnEihziRQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KIEznEiRziRA5xIoc4kUOcyCFO5BAncogTOcSJHOJEDnEihziRQ5zIIU7kEHefPYCZ1nWdPYF9xhh7L3GSQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KIEznEiRziRA5xIoc4kUOcyCFO5BAncogTOcSJHOJEDnEihziRQ5zIIU7kECdyiBM5xIkc4kQOcUe/T/58Pk/Zwdc8Ho/ZE/iqo5G/Xq9TdvA1Iv81btchTuQQJ3KIEznEiRziRA5xIoc4kUOcyCFO5BAncogTOcSJHOJEDnEihziRQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KIEznEiRziRA5xIoc4kUOcyCFO5BAncogTOcSJHOJEDnEihziRQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KIEznEiRziRA5xIoc4kUOcyCFO5BAncogTOcSJHOJEDnEihziRQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KIEznEiRziRA5xIoc4kUOcyCFO5BAncogTOcSJHOJEDnEihziRQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KIEznEiRziRA5xIoc4kUOcyCFO5BAncogTOcSJHOJEDnEihziRQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KIEznEiRziRA5xIoc4kUOcyCFO5BAncogTOcSJHOJEDnEihziRQ5zIIU7kECdyiBM5xIkc4u4Hr1+W5ZQdTOHv+wW3bdtmbwAu5HYd4kQOcfueydd1vWgH8Lkxxuc/dpJDnBdvEOckhziRQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KIEznEvQEiphdy5g30mQAAAABJRU5ErkJggg==">
+                            </td>
+                            <td></td>
+                            <td>1</td>
+                            <td>0.688</td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Demographic data</td>
+                            <td>
+                                <div class='tooltip'>Gender
+                                    <span class="tooltiptext">1 – male<br />0 – female</span>
+                                </div>
+                                <p>(numeric/binary)</p>
+                            </td>
+                            <td><img style="max-height: 50px"
+                                    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAUwAAADnCAIAAAD6oPiRAAAACXBIWXMAAA7EAAAOxAGVKw4bAAADCUlEQVR4nO3Y0YmDQABF0c1iFf5Zg/2XYA12YAtuC3ETM3BzzrcDD+QyJo/zPH+Art/RA4B7iRziRA5xIoc4kUOcyCFO5BAncogTOcSJHOJEDnEihziRQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KIEznEiRziRA5xIoc4kUOcyCFO5BAncogTOcSJHOKmF89v2/aWHXzMuq6jJ/BRbnKIEznEiRziRA5xIoc4kUOcyCFO5BAncogTOcSJHOJEDnEihziRQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KIEznEiRziRA5xIoc4kUOcyCFO5BAncogTOcSJHOJEDnEihziRQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KIEznEiRziRA5xIoc4kUOcyCFO5BAncogTOcSJHOJEDnEihziRQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KIEznEiRziRA5xIoc4kUOcyCFuGj2AkfZ9Hz2Ba5ZluXpE5F/tOI7RE7jmH5H7XIc4kUOcyCFO5BAncogTOcSJHOJEDnEihziRQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KIEznEiRziRA5xIoc4kUOcyCFO5BAncogTOcSJHOJEDnEihziRQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KIEznEiRziRA5xIoc4kUOcyCFO5BAncogTOcSJHOJEDnEihziRQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KIEznEiRziRA5xIoc4kUOcyCFO5BAncogTOcSJHOJEDnEihziRQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KIm148P8/zW3YwhNf3DR7neY7eANzI5zrEiRzirv0m37btph3A89Z1ff5hNznE+eMN4tzkECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KIEznEiRziRA5xIoe4P+7yF5YKWjHXAAAAAElFTkSuQmCC">
+                            </td>
+                            <td></td>
+                            <td>0</td>
+                            <td>0.648</td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+
+                        <tr>
+                            <td>Demographic data</td>
+                            <td>
+                                <div class='tooltip'>Age at enrollment
+                                    <span class="tooltiptext">Age of students at enrollment</span>
+                                </div>
+                                <p>(numeric/discrete)</p>
+                            </td>
+                            <td><img style="max-height: 50px"
+                                    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAUwAAADnCAIAAAD6oPiRAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAECElEQVR4nO3dwUojaQBGUdt0FEsQQbNx4zpr3/8RfAhBUUHEjWIQtRezcWAGesY/tN6cs9bPQrlWVUzMj/f39y2ga/tPHwCwXiKHOJFDnMghTuQQJ3KIEznEiRziRA5xIoc4kUOcyCFO5BAncogTOcSJHOJEDnEihziRQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KIEznEiRziRA5xIoe4n5/8/PPz8yHHsbW1NU3TcrkctQb8xZkc4kQOcSKHOJFDnMghTuQQJ3KIEznEiRziRA5xIoc4kUOcyCFO5BAncogTOcSJHOJEDnEihziRQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KIEznEiRziRA5xIoc4kUOcyCFO5BAncogTOcSJHOJEDnEihziRQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KIEznEiRziRA5xIoc4kUOcyCFO5BAncogTOcSJHOJEDnEihziRQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KIEznEiRziRA5xIoc4kUOcyCFO5BAncogTOcSJHOJEDnEihziRQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KIEznEiRziRA5xIoc4kUOcyCFO5BAncogTOcSJHOJEDnEihziRQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KIEznEiRziRA5xIoc4kUOcyCFO5BAncogTOcSJHOJEDnEihziRQ5zIIe7nnz6Af7ZarS4vL0etHRwcLBaLUWvwvXzRyF9fXx8eHkatzefzUVPw7bhchziRQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQ90VfoLI+b29vr6+vo9Zms9n2tl+UfGkbF/n9/f3FxcWotdPT0+Pj41FrsA7OQhAncogTOcSJHOJEDnEb9+j6+jw/P7+8vIxam6ZpNpuNWmOTiXyY29vbu7u7UWvL5XKaplFrbDKX6xAncogTOcS5J/8GHh4eBj6k581kNo3Iv4Hr6+unp6dRayLfNC7XIc6ZfKPd3NyMmprP50dHR6PWGEjkG+3q6mrU1DRNIv+aXK5DnDM5461Wq4HXCAcHB/4zx2d8NvKTk5Mhx7H193cRn8/nA5c/Pj90mqY1LR8eHu7s7Ixa/vjdWCwWA/+E9tGafnzb29t7e3vrWF6tVo+Pj6OW9/f3d3d3R639m7e3t/f391Fr/+MVDT8GfnngC3JPDnEih7j/dk9+fn6+puMAft/Z2dnvf7AzOcR54A3inMkhTuQQJ3KIEznEiRziRA5xIoc4kUOcyCFO5BAncogTOcSJHOJEDnG/AG2CXh/8zvoCAAAAAElFTkSuQmCC">
+                            </td>
+                            <td>23.13</td>
+                            <td>20</td>
+                            <td>0.32</td>
+                            <td>17</td>
+                            <td>70</td>
+                        </tr>
+                        <tr>
+                            <td>Demographic data</td>
+                            <td>
+                                <div class='tooltip'>International
+                                    <span class="tooltiptext">1 – yes<br />0 – no</span>
+                                </div>
+                                <p>(numeric/binary)</p>
+                            </td>
+                            <td><img style="max-height: 50px"
+                                    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAUwAAADnCAIAAAD6oPiRAAAACXBIWXMAAA7EAAAOxAGVKw4bAAADBElEQVR4nO3Y0YnCQABF0XWxilQRmP5LCKShEFtQNA5cz/lO4EG4zOjtPM8/oOt/9gDgWiKHOJFDnMghTuQQJ3KIEznEiRziRA5xIoc4kUOcyCFO5BAncogTOcSJHOJEDnEihziRQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KIEznEiRziRA5xIoe4+5vvb9v2kR18zRhj9gS+ykkOcSKHOJFDnMghTuQQJ3KIEznEiRziRA5xIoc4kUOcyCFO5BAncogTOcSJHOJEDnEihziRQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KIEznEiRziRA5xIoc4kUOcyCFO5BAncogTOcSJHOJEDnEihziRQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KIEznEiRziRA5xIoc4kUOcyCFO5BAncogTOcSJHOJEDnEihziRQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KIEznEiRziRA5xIoc4kUOcyCFO5BAncogTOcSJHOJEDnEihziRQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KIEznEiRziRA5xIoc4kUOcyCFO5BAncogTOcSJHOJEDnEihziRQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KIEznEiRziRA5xIoc4kUOcyCFO5BAncogTOcSJHOJEDnEihziRQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KIEznEiRziRA5xIoc4kUOcyCFO5BAncogTOcSJHOJEDnEihziRQ5zIIU7kECdyiBM5xIkc4kQOcSKHuPvsAcy07/vsCbxmXddXXxH5TzuOY/YELue6DnEih7h3r+vLsnxkB1P4fL/gdp7n7A3AhVzXIU7kEPfab/Jt2y7aATxvjPH8w05yiPPHG8Q5ySFO5BAncogTOcSJHOJEDnEihziRQ5zIIU7kECdyiBM5xIkc4kQOcQ8+AhdgTrHqzQAAAABJRU5ErkJggg==">
+                            </td>
+                            <td></td>
+                            <td>0</td>
+                            <td>0.116</td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+
+                        <!-- Socioeconomic data -->
+                        <tr>
+                            <td>Socioeconomic data</td>
+                            <td>
+                                <div class='tooltip'>Father's qualification
+                                    <span class="tooltiptext">
+                                        1 - Secondary Education - 12th Year of
+                                        Schooling or Eq.<br />
+                                        2 - Higher Education - Bachelor's Degree<br />
+                                        3 - Higher Education - Degree<br />
+                                        4 - Higher Education - Master's<br />
+                                        5 - Higher Education - Doctorate<br />
+                                        6 - Frequency of Higher Education<br />
+                                        7 - 12th Year of Schooling - Not
+                                        Completed<br />
+                                        8 - 11th Year of Schooling - Not
+                                        Completed<br />
+                                        9 - 7th Year (Old)<br />
+                                        10 - Other - 11th Year of Schooling<br />
+                                        11 - 2nd year complementary high school
+                                        course<br />
+                                        12 - 10th Year of Schooling<br />
+                                        13 - General commerce course<br />
+                                        14 - Basic Education 3rd Cycle
+                                        (9th/10th/11th Year)<br />
+                                        15 - Complementary High School Course<br />
+                                        16 - Technical-professional course<br />
+                                        17 - Complementary High School Course -
+                                        not concluded<br />
+                                        18 - 7th year of schooling<br />
+                                        19 - 2nd cycle of the general high school
+                                        course<br />
+                                        20 - 9th Year of Schooling - Not
+                                        Completed<br />
+                                        21 - 8th year of schooling<br />
+                                        22 - General Course of Administration and
+                                        Commerce<br />
+                                        23 - Supplementary Accounting and
+                                        Administration<br />
+                                        24 - Unknown<br />
+                                        25 - Can't read or write<br />
+                                        26 - Can read without having a 4th year
+                                        of schooling<br />
+                                        27 - Basic education 1st cycle (4th/5th
+                                        year)<br />
+                                        28 - Basic Education 2nd Cycle
+                                        (6th/7th/8th Year)<br />
+                                        29 - Technological specialization course<br />
+                                        30 - Higher education - degree (1st
+                                        cycle)<br />
+                                        31 - Specialized higher studies course<br />
+                                        32 - Professional higher technical course<br />
+                                        33 - Higher Education - Master (2nd
+                                        cycle)<br />
+                                        34 - Higher Education - Doctorate (3rd
+                                        cycle)
+                                    </span>
+                                </div>
+                                <p>(numeric/discrete)</p>
+                            </td>
+                            <td><img style="max-height: 50px"
+                                    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAUwAAADnCAIAAAD6oPiRAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAEB0lEQVR4nO3dvUprWwBG0eRGLbYIgtpYaG3t+z+CtYWVpZAqShSi5BYHJKUHl+iZjlGl0I9FksnOj+B8u93OgK7/vvsAwNcSOcSJHOJEDnEihziRQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KIEznEiRziRA5xIoc4kUOcyCFO5BAncogTOcSJHOJEDnEihziRQ5zIIU7kECdyiBM5xO199wHgLyyXy/v7+1Frl5eXp6eno9Z+LFdyiBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KIEznEiRziRA5xIoc4kUOcyCFO5BAncogTOcSJHOJEDnEihziRQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KIEznEiRziRA5xIoc4kUOcyCFO5BAncogTOcSJHOJEDnEihziRQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQt/fJ31+tVkPOMZvNFovF4eHhqDXgj89Gfnd3N+Qcs9lsmqarq6tRa8AfXq5DnMghTuQQJ3KIEznEiRziRA5xIoc4kUOcyCFO5BAncogTOcSJHOJEDnEihziRQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFDnMgh7rP/Jol3Ly8vm81m1No0TYvFYtQav5nIh3l4eFgul6PWrq6upmkatcZv5uU6xIkc4kQOcSKHOJFDnMghTuQQJ3KIEznEiRziRA5xIoc4kUOcyCFO5BAncogTOcSJHOJEDnEihziRQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KIEznEiRziRA5xIoc4kUOcyCFO5BAncogTOcSJHOJEDnEihziRQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KIEznEiRziRA5xIoc4kUOcyCFO5BAncogTOcSJHOJEDnEihziRQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFD3N53H4Cg7Xb79vY2am0+ny8Wi1Frv5DIGe/5+fn29nbU2tnZ2cXFxai1X8jLdYgTOcSJHOJEDnEih7hf9+n6crm8v78ftXZ5eXl6ejpqDb7Cz418u90OXJvP5wPX4B/yQyNfr9e+aIUhfmjk7Fqv1wP/gOzo6Oj99uPj46jZxWIxTdOoNQb6bOTn5+dDzjGbzfb393dvD1zeffJN0/RFy8fHxwcHB6OWd++N9Xq92WxGLe9G/vT0NGp2f3///d74Fx++1Wq1Xq9HLZ+cnLw/gq+vrwPfe+4+MT5oPvatL/DT+AoN4kQOcX/3nvzm5uaLzgF83PX19cd/2JUc4nzwBnGu5BAncogTOcSJHOJEDnEihziRQ5zIIU7kECdyiBM5xIkc4kQOcSKHuP8B9NVh3axQdpgAAAAASUVORK5CYII=">
+                            </td>
+                            <td>16.41</td>
+                            <td>14</td>
+                            <td>0.67</td>
+                            <td>1</td>
+                            <td>34</td>
+                        </tr>
+                        <tr>
+                            <td>Socioeconomic data</td>
+                            <td>
+                                <div class='tooltip'>Mother's qualification
+                                    <span class="tooltiptext">
+                                        1 - Secondary Education - 12th Year of
+                                        Schooling or Eq.<br />
+                                        2 - Higher Education - Bachelor's Degree<br />
+                                        3 - Higher Education - Degree<br />
+                                        4 - Higher Education - Master's<br />
+                                        5 - Higher Education - Doctorate<br />
+                                        6 - Frequency of Higher Education<br />
+                                        7 - 12th Year of Schooling - Not
+                                        Completed<br />
+                                        8 - 11th Year of Schooling - Not
+                                        Completed<br />
+                                        9 - 7th Year (Old)<br />
+                                        10 - Other - 11th Year of Schooling<br />
+                                        11 - 2nd year complementary high school
+                                        course<br />
+                                        12 - 10th Year of Schooling<br />
+                                        13 - General commerce course<br />
+                                        14 - Basic Education 3rd Cycle
+                                        (9th/10th/11th Year)<br />
+                                        15 - Complementary High School Course<br />
+                                        16 - Technical-professional course<br />
+                                        17 - Complementary High School Course -
+                                        not concluded<br />
+                                        18 - 7th year of schooling<br />
+                                        19 - 2nd cycle of the general high school
+                                        course<br />
+                                        20 - 9th Year of Schooling - Not
+                                        Completed<br />
+                                        21 - 8th year of schooling<br />
+                                        22 - General Course of Administration and
+                                        Commerce<br />
+                                        23 - Supplementary Accounting and
+                                        Administration<br />
+                                        24 - Unknown<br />
+                                        25 - Can't read or write<br />
+                                        26 - Can read without having a 4th year
+                                        of schooling<br />
+                                        27 - Basic education 1st cycle (4th/5th
+                                        year)<br />
+                                        28 - Basic Education 2nd Cycle
+                                        (6th/7th/8th Year)<br />
+                                        29 - Technological specialization course<br />
+                                        30 - Higher education - degree (1st
+                                        cycle)<br />
+                                        31 - Specialized higher studies course<br />
+                                        32 - Professional higher technical course<br />
+                                        33 - Higher Education - Master (2nd
+                                        cycle)<br />
+                                        34 - Higher Education - Doctorate (3rd
+                                        cycle)
+                                    </span>
+                                </div>
+                                <p>(numeric/discrete)</p>
+                            </td>
+                            <td><img style="max-height: 50px"
+                                    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAUwAAADnCAIAAAD6oPiRAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAENElEQVR4nO3bQUtbaQCG0WhTFxeECC1YF91n3f//E1y7lYB0YSiCVG1JzSxmGFy20y9j+uScVRb68pnwkHsjOdputzOg6/i1DwDslsghTuQQJ3KIEznEiRziRA5xIoc4kUOcyCFO5BAncogTOcSJHOJEDnEihziRQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KIEznEiRziRA5xIoc4kUOcyCFu/pu/f3l5OeQcs9lsmqblcjlqDfibd3KIEznEiRziRA5xIoc4kUOcyCFO5BAncogTOcSJHOJEDnEihziRQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KIEznEiRziRA5xIoc4kUOcyCFO5BAncogTOcSJHOJEDnEihziRQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KIEznEiRziRA5xIoc4kUOcyCFO5BAncogTOcSJHOJEDnEihziRQ5zIIU7kECdyiBM5xM1f+wAEPT09XV9fj1pbLBbn5+ej1g6QyBnv+fn569evo9amaRo1dZhcrkOcyCHO5fowm83mx48fo9ZOTk6Ojo5GrXHIRD7Mzc3Ner0etbZcLt2LMoTLdYgTOcSJHOJEDnEihziRQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KIEznEiRziRA5xIoc4kUOcyCFO5BAncogTOcSJHOJEDnEihziRQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQN3/tA8AvuL+/X6/Xo9bevXt3eno6am1viZw/ybdv3758+TJq7fT09BAid7kOcSKHOJFDnMghTuQQJ3KIEznEiRziRA5xIoc4kUOcyCFO5BAncogTOcSJHOJEDnEihziRQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KIEznEiRziRA5xIoc4kUOcyCFO5BAncogTOcSJHOJEDnEihziRQ5zIIU7kECdyiJu/9gF4Tbe3t6Om5vP52dnZqDUGEvlBW61Wo6amaRL5fnK5DnEihziRQ5zIIU7kECdyiBM5xB3c/8nv7u4+f/48au3Dhw+LxWLUGuzCnka+3W6/f/8+au3Nmzfz+T9/6WazeXh4GLW82WxGTcGO7Gnkj4+PV1dXo9bev3//8ePHUWvwZ9nTyOF/tt1ut9vtqLXj4z36tEvkMJvNZqvVar1ej1pbLpfTNI1a+02/G/nFxcWQc8xms7dv3758PHD55dM9TdOOlheLxcnJyajll8/G/f39wJv/l18j8fL9+3h3L99ms3l+fh61/B8OeTTwEgXYQ3t05wDsgsgh7tfuyS8vL3d0DuDnffr06ed/2Ds5xPngDeK8k0OcyCFO5BAncogTOcSJHOJEDnEihziRQ5zIIU7kECdyiBM5xIkc4v4CpsBxFqQKThoAAAAASUVORK5CYII=">
+                            </td>
+                            <td>12.31</td>
+                            <td>13</td>
+                            <td>0.73</td>
+                            <td>1</td>
+                            <td>29</td>
+                        </tr>
+                        <tr>
+                            <td>Socioeconomic data</td>
+                            <td>
+                                <div class="tooltip">Father's occupation
+                                    <span class="tooltiptext">
+                                        1 - Student<br />
+                                        2 - Representatives of the Legislative
+                                        Power and Executive Bodies, Directors, Directors and Executive Managers<br />
+                                        3 - Specialists in Intellectual and
+                                        Scientific Activities<br />
+                                        4 - Intermediate Level Technicians and
+                                        Professions<br />
+                                        5 - Administrative staff<br />
+                                        6 - Personal Services, Security and
+                                        Safety Workers and Sellers<br />
+                                        7 - Farmers and Skilled Workers in
+                                        Agriculture, Fisheries and Forestry<br />
+                                        8 - Skilled Workers in Industry,
+                                        Construction and Craftsmen<br />
+                                        9 - Installation and Machine Operators
+                                        and Assembly Workers<br />
+                                        10 - Unskilled Workers<br />
+                                        11 - Armed Forces Professions<br />
+                                        12 - Other Situation<br />
+                                        13 - (blank)<br />
+                                        14 - Armed Forces Officers<br />
+                                        15 - Armed Forces Sergeants<br />
+                                        16 - Other Armed Forces personnel<br />
+                                        17 - Directors of administrative and
+                                        commercial services<br />
+                                        18 - Hotel, catering, trade and other
+                                        services directors<br />
+                                        19 - Specialists in the physical
+                                        sciences, mathematics, engineering and related techniques<br />
+                                        20 - Health professionals<br />
+                                        21 - Teachers<br />
+                                        22 - Specialists in finance, accounting,
+                                        administrative organization, public and commercial relations<br />
+                                        23 - Intermediate level science and
+                                        engineering technicians and professions<br />
+                                        24 - Technicians and professionals, of
+                                        intermediate level of health<br />
+                                        25 - Intermediate level technicians from
+                                        legal, social, sports, cultural and similar services<br />
+                                        26 - Information and communication
+                                        technology technicians<br />
+                                        27 - Office workers, secretaries in
+                                        general and data processing operators<br />
+                                        28 - Data, accounting, statistical,
+                                        financial services and registry-related operators<br />
+                                        29 - Other administrative support staff<br />
+                                        30 - Personal service workers<br />
+                                        31 - Sellers<br />
+                                        32 - Personal care workers and the like<br />
+                                        33 - Protection and security services
+                                        personnel<br />
+                                        34 - Market-oriented farmers and skilled
+                                        agricultural and animal production workers<br />
+                                        35 - Farmers, livestock keepers, fishermen,
+                                        hunters and gatherers, subsistence<br />
+                                        36 - Skilled construction workers and the
+                                        like, except electricians<br />
+                                        37 - Skilled workers in metallurgy,
+                                        metalworking and similar<br />
+                                        38 - Skilled workers in electricity and
+                                        electronics<br />
+                                        39 - Workers in food processing,
+                                        woodworking, clothing and other industries and crafts<br />
+                                        40 - Fixed plant and machine operators<br />
+                                        41 - Assembly workers<br />
+                                        42 - Vehicle drivers and mobile equipment
+                                        operators<br />
+                                        43 - Unskilled workers in agriculture,
+                                        animal production, fisheries and forestry<br />
+                                        44 - Unskilled workers in extractive
+                                        industry, construction, manufacturing and transport<br />
+                                        45 - Meal preparation assistants<br />
+                                        46 - Street vendors (except food) and
+                                        street service providers
+                                    </span>
+                                </div>
+                                <p>(numeric/discrete)</p>
+                            </td>
+                            <td><img style="max-height: 50px"
+                                    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAUwAAADnCAIAAAD6oPiRAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAEGElEQVR4nO3cPUtjaQCG4eMmKgQRC0WwcGpr//9PsLaxsfYLRSLKRLcQXItZmF1f19l7rqs6hXl4Cbk5xxRZe3l5mYCuP776AMDnEjnEiRziRA5xIoc4kUOcyCFO5BAncogTOcSJHOJEDnEihziRQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KIEznEiRziRA5xIoc4kUOcyCFO5BAncogTOcTNv/oAP7ZcLk9PT0et7e3tHR4ejlqD/xd3cogTOcSJHOJEDnEihziRQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KIEznEiRziRA5xIoc4kUOcyCFO5BAncogTOcSJHOJEDnEihziRQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KIEznEiRziRA5xIoc4kUOcyCFO5BAncogTOcSJHOJEDnEihziRQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KIEznEiRziRA5xIoc4kUOcyCFO5BAncogTOcSJHOJEDnEihziRQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KIEznEiRziRA5xIoc4kUOcyCFO5BA3/+Drb29vh5xjmqbZbLa1tTVqDXj10cjPzs6GnGOapsVicXR0NGoNeOVxHeJEDnEihziRQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KIEznEiRziRA5xIoc4kUOcyCFO5BAncogTOcSJHOJEDnEihziRQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KIEznEiRziRA5xIoc4kUOcyCFO5BAncogTOcSJHOJEDnEihziRQ5zIIW7+1Qf4r61Wq6enp1FrGxsbs9ls1Bp8ht8u8pubm/Pz81Fr3759293dHbUGn8HjOsSJHOJEDnEihziRQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KIEznEiRziRA5xv91vvMEPLZfLx8fHUWvb29u/zi98inyY1Wr18vIyam02m62trY1a+zvX19ejpubz+fb29uv18/Pzw8PDwOXNzc3X67u7u4uLi1HLe3t7b2e+uLi4vLwctXx0dLRYLEatfdBHIz84OBhyjmma1tfX318PXH7/di8Wi09avr+/Xy6Xo5Z3d3ff3pCrq6vv37+PWt7f33+7Hnjven5+frterVZ3d3ejlheLxVvk8/l8YDzz+V+f/52dnY2NjVHL7z/Mq9Vq1Ow0Tf/iAWFt4M0H+AX54g3iRA5x/+x/8pOTk086B/Dzjo+Pf/6P3ckhzhdvEOdODnEihziRQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KI+xN4CmQAs6WzzQAAAABJRU5ErkJggg==">
+                            </td>
+                            <td>7.83</td>
+                            <td>8</td>
+                            <td>0.62</td>
+                            <td>1</td>
+                            <td>46</td>
+                        </tr>
+                        <tr>
+                            <td>Socioeconomic data</td>
+                            <td>
+                                <div class='tooltip'>Mother's occupation
+                                    <span class="tooltiptext">
+                                        1 - Student<br />
+                                        2 - Representatives of the Legislative
+                                        Power and Executive Bodies, Directors, Directors and Executive Managers<br />
+                                        3 - Specialists in Intellectual and
+                                        Scientific Activities<br />
+                                        4 - Intermediate Level Technicians and
+                                        Professions<br />
+                                        5 - Administrative staff<br />
+                                        6 - Personal Services, Security and
+                                        Safety Workers and Sellers<br />
+                                        7 - Farmers and Skilled Workers in
+                                        Agriculture, Fisheries and Forestry<br />
+                                        8 - Skilled Workers in Industry,
+                                        Construction and Craftsmen<br />
+                                        9 - Installation and Machine Operators
+                                        and Assembly Workers<br />
+                                        10 - Unskilled Workers<br />
+                                        11 - Armed Forces Professions<br />
+                                        12 - Other Situation<br />
+                                        13 - (blank)<br />
+                                        14 - Armed Forces Officers<br />
+                                        15 - Armed Forces Sergeants<br />
+                                        16 - Other Armed Forces personnel<br />
+                                        17 - Directors of administrative and
+                                        commercial services<br />
+                                        18 - Hotel, catering, trade and other
+                                        services directors<br />
+                                        19 - Specialists in the physical
+                                        sciences, mathematics, engineering and related techniques<br />
+                                        20 - Health professionals<br />
+                                        21 - Teachers<br />
+                                        22 - Specialists in finance, accounting,
+                                        administrative organization, public and commercial relations<br />
+                                        23 - Intermediate level science and
+                                        engineering technicians and professions<br />
+                                        24 - Technicians and professionals, of
+                                        intermediate level of health<br />
+                                        25 - Intermediate level technicians from
+                                        legal, social, sports, cultural and similar services<br />
+                                        26 - Information and communication
+                                        technology technicians<br />
+                                        27 - Office workers, secretaries in
+                                        general and data processing operators<br />
+                                        28 - Data, accounting, statistical,
+                                        financial services and registry-related operators<br />
+                                        29 - Other administrative support staff<br />
+                                        30 - Personal service workers<br />
+                                        31 - Sellers<br />
+                                        32 - Personal care workers and the like<br />
+                                        33 - Protection and security services
+                                        personnel<br />
+                                        34 - Market-oriented farmers and skilled
+                                        agricultural and animal production workers<br />
+                                        35 - Farmers, livestock keepers, fishermen,
+                                        hunters and gatherers, subsistence<br />
+                                        36 - Skilled construction workers and the
+                                        like, except electricians<br />
+                                        37 - Skilled workers in metallurgy,
+                                        metalworking and similar<br />
+                                        38 - Skilled workers in electricity and
+                                        electronics<br />
+                                        39 - Workers in food processing,
+                                        woodworking, clothing and other industries and crafts<br />
+                                        40 - Fixed plant and machine operators<br />
+                                        41 - Assembly workers<br />
+                                        42 - Vehicle drivers and mobile equipment
+                                        operators<br />
+                                        43 - Unskilled workers in agriculture,
+                                        animal production, fisheries and forestry<br />
+                                        44 - Unskilled workers in extractive
+                                        industry, construction, manufacturing and transport<br />
+                                        45 - Meal preparation assistants<br />
+                                        46 - Street vendors (except food) and
+                                        street service providers
+                                    </span>
+                                </div>
+                                <p>(numeric/discrete)</p>
+                            </td>
+                            <td><img style="max-height: 50px"
+                                    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAUwAAADnCAIAAAD6oPiRAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAEIElEQVR4nO3av0pcaQCH4RP/jxAMYWxEFPQSvP9LsLRMkcZCApJY6CiDWwgiyy64+M0a3zxPdQr98THHlzkz+Onx8XECutbe+wDAaokc4kQOcSKHOJFDnMghTuQQJ3KIEznEiRziRA5xIoc4kUOcyCFO5BAncogTOcSJHOJEDnEihziRQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KIEznEiRziNt77AP+3Hz9+fP/+fdTa8fHxfD4ftQar4J0c4kQOcSKHOJFDnMghTuQQJ3KIEznEiRziRA5xIoc4kUOcyCFO5BAncogTOcSJHOJEDnEihziRQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KIEznEiRziRA5xIoc4kUOcyCFO5BAncojbeO8D/LPlcnlzczNqbXt7ezabjVqDj+U3jXyxWHz79m3U2v7+/tHR0ag1+Fg8rkOcyCFO5BAncogTOcSJHOJEDnEihziRQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KIEznEiRziRA5xIoc4kUOcyCFO5BAncogTOcSJHOJEDnEihziRQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KIEznEiRziRA5xIoc4kUPcxht//+LiYsg5pmna2dk5PT0dtQY8eWvkd3d3Q84xTdPamscKGE9XECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KIEznEiRziRA5xIoc4kUOcyCFO5BAncogTOcSJHOJEDnEihziRQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KIEznEiRziRA5xIoc4kUOcyCFO5BAncogTOcSJHOJEDnEihziRQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KIEznEiRziRA5xIoc4kUOcyCFO5BAncogTOcSJHOJEDnEihziRQ5zIIU7kECdyiNt47wN0XF1d/fz5c9Ta0dHR9vb2qDX+ZCIf5vb29tevX6PWlsvlqCn+cB7XIU7kECdyiPOZHKZpmi4vL6+vr0etnZyczGazUWtvJHKYpml6eHi4u7sbtfb4+Dhq6u1E/gFcXV3d39+PWjs8PHy+vri4GDU7m81OTk6erheLxeXl5ajlz58/z+fzp+vlcjnwpdja2lpfXx+19m9Wd/te6a2RHxwcvHHh2ebm5svrgcu7u7svr1e0/OXLl62trVHLL1+NtbW1Ff0tfv36ddTU3w68s7OziuXFYjHwnxH29vae7+BHvH2v9Om3eq4AhvPtOsSJHOL+22fy8/PzFZ0DeL2zs7PX/7B3cojzxRvEeSeHOJFDnMghTuQQJ3KIEznEiRziRA5xIoc4kUOcyCFO5BAncogTOcT9BTTzZwkRolmnAAAAAElFTkSuQmCC">
+                            </td>
+                            <td>7.32</td>
+                            <td>6</td>
+                            <td>0.55</td>
+                            <td>1</td>
+                            <td>32</td>
+                        </tr>
+                        <tr>
+                            <td>Socioeconomic data</td>
+                            <td>
+                                <div class='tooltip'>Educational special needs
+                                    <span class="tooltiptext">1 – yes<br />0 – no</span>
+                                </div>
+                                <p>(numeric/binary)</p>
+                            </td>
+                            <td><img style="max-height: 50px"
+                                    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAUwAAADnCAIAAAD6oPiRAAAACXBIWXMAAA7EAAAOxAGVKw4bAAADBUlEQVR4nO3YwYmDUABF0cmQKtxYxO+/BItwbw9OC5GM+XBzzlrlgVw++jjP8wfo+p09ALiXyCFO5BAncogTOcSJHOJEDnEihziRQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KIEznEiRziRA5xIoc4kUOcyCFO5BAncogTOcSJHOJEDnEihziRQ5zIIe755v3btv3LDj5mjDF7Ah/lJIc4kUOcyCFO5BAncogTOcSJHOJEDnEihziRQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KIEznEiRziRA5xIoc4kUOcyCFO5BAncogTOcSJHOJEDnEihziRQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KIEznEiRziRA5xIoc4kUOcyCFO5BAncogTOcSJHOJEDnEihziRQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KIEznEiRziRA5xIoc4kUOcyCFO5BAncogTOcSJHOJEDnEihziRQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KIEznEiRziRA5xIoc4kUOcyCFO5BAncogTOcSJHOJEDnEihziRQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KIEznEiRziRA5xIoc4kUOcyCFO5BAncogTOcSJHOJEDnEihziRQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KIEznEiRziRA5xIoc4kUOcyCFO5BAncogTOcSJHOJEDnEihziRQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KIEznEiRziRA5xIoc4kUOcyCFO5BD3nD2AmfZ9nz2Ba9Z1vXqLyL/acRyzJ3DNhMiXZXnzCUzk9X2Dx3meszcAN/LjDeJEDnHXvsm3bbtpB/C6McbrFzvJIc6PN4hzkkOcyCFO5BAncogTOcSJHOJEDnEihziRQ5zIIU7kECdyiBM5xIkc4v4AGjMXiqHVXOQAAAAASUVORK5CYII=">
+                            </td>
+                            <td></td>
+                            <td>0</td>
+                            <td>0.0644</td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Socioeconomic data</td>
+                            <td>
+                                <div class='tooltip'>Debtor
+                                    <span class="tooltiptext">1 – yes<br />0 – no</span>
+                                </div>
+                                <p>(numeric/binary)</p>
+                            </td>
+                            <td><img style="max-height: 50px"
+                                    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAUwAAADnCAIAAAD6oPiRAAAACXBIWXMAAA7EAAAOxAGVKw4bAAADBElEQVR4nO3dy4nEMBQAwfUyUTgN5x+CnJI2hRXzEfRU3QUPTCPZB/mYc/4AXb+7BwDeS+QQJ3KIEznEiRziRA5xIoc4kUOcyCFO5BAncogTOcSJHOJEDnEihziRQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KIEznEiRziRA5xIoc4kUOcyCFO5BD3eHL9GOMlc/Ax13XtHoGPspNDnMghTuQQJ3KIEznEiRziRA5xIoc4kUOcyCFO5BAncogTOcSJHOJEDnEihziRQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KIEznEiRziRA5xIoc4kUOcyCFO5BAncogTOcSJHOJEDnEihziRQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KIEznEiRziRA5xIoc4kUOcyCFO5BAncogTOcSJHOJEDnEihziRQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KIEznEiRziRA5xIoc4kUOcyCFO5BAncogTOcSJHOJEDnEihziRQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KIEznEiRziRA5xIoc4kUOcyCFO5BAncogTOcSJHOJEDnEihziRQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KIEznEiRziRA5xIoc4kUOcyCFO5BAncogTOcSJHOJEDnEihziRQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KIEznEiRziRA5xj90DsNOcc/cIrDmOY3WJyL/afd+7R2DNdV2rSxzXIU7kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KIEznEiRziRA5xIoc4kUOcyCFO5BAncogTOcSJHOKeva31PM+XzMEWHt83ONy8DW2O6xAncohbeycfY7xpDuD/lv6jYieHOB/eIM5ODnEihziRQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KI+wONlRdsJB12twAAAABJRU5ErkJggg==">
+                            </td>
+                            <td></td>
+                            <td>0</td>
+                            <td>0.354</td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Socioeconomic data</td>
+                            <td>
+                                <div class='tooltip'>Tuition fees up to date
+                                    <span class="tooltiptext">1 – yes<br />0 – no</span>
+                                </div>
+                                <p>(numeric/binary)</p>
+                            </td>
+                            <td><img style="max-height: 50px"
+                                    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAUwAAADnCAIAAAD6oPiRAAAACXBIWXMAAA7EAAAOxAGVKw4bAAADCElEQVR4nO3cwYmDUABF0cmQKlzbgf2XYAc2YQVOCxE1H+6cs47wIFy+uvB1HMcP0PU7egDwLJFDnMghTuQQJ3KIEznEiRziRA5xIoc4kUOcyCFO5BAncogTOcSJHOJEDnEihziRQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KIEznEiRziRA5xIoc4kUPce/QARlrXdfQEzlmW5ewlTnKIEznEiRziRA5xIoc4kUOcyCFO5BAncogTOcSJHOJEDnEihziRQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KIEznEiRziRA5xIoc4kUOcyCFO5BAncogTOcSJHOJEDnEihziRQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KIEznEiRziRA5xIoc4kUOcyCFO5BAncogTOcSJHOJEDnEihziRQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KIEznEiRziRA5xIoc4kUOcyCFO5BAncogTOcSJHOJEDnEihziRQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KIEznEiRziRA5xIoc4kUOcyCFO5BAncogTOcSJHOJEDnEihziRQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KIEznEiRziRA5xIoc4kUOcyCFO5BAncogTOcSJHOJEDnEihziRQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KIEznEiRziRA5xIoc4kUPc++L127bdsoOvmed59AS+6mrk+77fsgN4iNt1iBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KIEznEiRziRA5xIoc4kUOcyCFO5BAncogTOcSJHOJEDnEihziRQ9zVTzJP03TLDobw9/0Hr+M4Rm8AHuR2HeJEDnHnnsnXdX1oB/C5ZVk+/7GTHOK8eIM4JznEiRziRA5xIoc4kUOcyCFO5BAncogTOcSJHOJEDnEihziRQ5zIIe4PhWgXPHJBqJgAAAAASUVORK5CYII=">
+                            </td>
+                            <td></td>
+                            <td>1</td>
+                            <td>0.369</td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Socioeconomic data</td>
+                            <td>
+                                <div class='tooltip'>Scholarship holder
+                                    <span class="tooltiptext">1 – yes<br />0 – no</span>
+                                </div>
+                                <p>(numeric/binary)</p>
+                            </td>
+                            <td><img style="max-height: 50px"
+                                    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAUwAAADnCAIAAAD6oPiRAAAACXBIWXMAAA7EAAAOxAGVKw4bAAADCUlEQVR4nO3YzamDQABG0ZeHNmEb038JbtKOC9NCJD8DN+esHfhALmNyO8/zD+j6nz0A+CyRQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KIEznEiRziRA5xIoc4kUOcyCFO5BAncogTOcSJHOJEDnEihziRQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFD3PLi+X3f37KDrxljzJ7AV7nJIU7kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KIEznEiRziRA5xIoc4kUOcyCFO5BAncogTOcSJHOJEDnEihziRQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KIEznEiRziRA5xIoc4kUOcyCFO5BAncogTOcSJHOJEDnEihziRQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KIEznEiRziRA5xIoc4kUOcyCFO5BAncogTOcSJHOJEDnEihziRQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KIEznEiRziRA5xIoc4kUOcyCFO5BAncogTOcSJHOJEDnEihziRQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KIEznEiRziRA5xIoc4kUOcyCFO5BAncohbZg9gpuM4Zk/gmnVdrx4R+U+73++zJ3DNGOPqEZ/rECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KIEznEiRziRA5xIoc4kUOcyCFO5BAncogTOcSJHOJEDnEihziRQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KIEznEiRziRA5xIoc4kUOcyCFO5BAncogTOcSJHOJEDnEihziRQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQt7x4ftu2t+xgCq/vF9zO85y9Afggn+sQJ3KIu/abfN/3D+0AnjfGeP5hNznE+eMN4tzkECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KIEznEiRziRA5xIoe4Bw0FF3hmTDXJAAAAAElFTkSuQmCC">
+                            </td>
+                            <td></td>
+                            <td>0</td>
+                            <td>0.563</td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+
+                        <!-- Macroeconomic data -->
+                        <tr>
+                            <td>Macroeconomic data</td>
+                            <td>
+                                <div class='tooltip'>Unemployment rate
+                                    <span class="tooltiptext">Unemployment rate (%)</span>
+                                </div>
+                                <p>(numeric/continous)</p>
+                            </td>
+                            <td><img style="max-height: 50px"
+                                    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAUwAAADnCAIAAAD6oPiRAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAD/0lEQVR4nO3dvUpkWQBG0duDlliJglRi0BhoYOz7P4KRkZGIiImKJoK/NcHA0DAwdLenRme7VmTg/TxYbu61EPy2XC4noOuPjz4AsFoihziRQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KIEznEiRziRA5xIoc4kUOcyCFO5BAncogTOcSJHOJEDnEihziRQ5zIIU7kECdyiBM5xIkc4kQOcSKHuLWPPkDH+fn59fX1qLXDw8P5fD5qja/MnRziRA5xIoc4kUOcyCFO5BAncogTOcSJHOJEDnGf9M9aHx4eTk9PR63t7Ox8//591Br8v3zSyKdpent7++gjQMHnjZz/wMnJyaipzc3N/f39UWsMJPIv7enpadTU2pqfpU/KG28QJ3KIEznEiRziRA5xIoc4kUOcyCFO5BAncogTOcSJHOJEDnEihziRQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KIEznEiRziRA5xIoc4kUOcyCFO5BAncogTOcSJHOJEDnEihziRQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KIEznEiRziRA5xIoc4kUPc2juvPzs7G3KOaZo2NjZ2d3dHrQF/eW/kt7e3Q84xTdN8Phc5DOdxHeJEDnEihziRQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KIEznEiRziRA5xIoc4kUOcyCFO5BAncogTOcSJHOJEDnEihziRQ5zIIU7kEPfef10M//T4+HhxcTFqbWtra7FYjFr7gkTOeK+vr/f396PWZrPZqKmvyeM6xIkc4jyuwzRN0+Xl5c3Nzai1g4ODzc3NUWvvJHKYpml6eXl5fn4etbZcLkdNvZ/IYbWurq4eHx9Hre3t7f3qJSKH1bq7u3t4eBi19huRe+MN4kQOcSKHOJFDnMghTuQQJ3KIEznEiRziRA5xIoc4kUOcyCFO5BAncogTOcSJHOJEDnEihziRQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KIEznEiRziRA5xIoc4kUOcyCFO5BAncogTOcSJHOJEDnEihziRQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KIEznEiRziRA5xIoc4kUOcyCFO5BAncogTOcSJHOLW3nn97u7ukHNM07S+vv7jxwOX5/P5qKl/sb29PZvNRq39+N1YHS/f31b38i0Wi+fn51HLv+Hbcrn8wC8PrJrHdYgTOcT92u/kx8fHKzoH8POOjo5+/pPdySHOG28Q504OcSKHOJFDnMghTuQQJ3KIEznEiRziRA5xIoc4kUOcyCFO5BAncoj7E7QmVV2LMrMtAAAAAElFTkSuQmCC">
+                            </td>
+                            <td>11.562</td>
+                            <td>11.1</td>
+                            <td>0.229</td>
+                            <td>7.6</td>
+                            <td>16.2</td>
+                        </tr>
+                        <tr>
+                            <td>Macroeconomic data</td>
+                            <td>
+                                <div class='tooltip'>Inflation rate
+                                    <span class="tooltiptext">Inflation rate (%)</span>
+                                </div>
+                                <p>(numeric/continous)</p>
+
+                            </td>
+                            <td><img style="max-height: 50px"
+                                    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAUwAAADnCAIAAAD6oPiRAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAD9klEQVR4nO3bTy9rWxyA4Vb9iRAiERIxMmFi5Pt/BKMOhaFpTSSiYZ+ZnGtwc1y7XO95ntGW2L+uRN+uVWo6DMME6Fr77gUAqyVyiBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KIEznEiRziRA5xIoc4kUOcyCFO5BAncogTOcSJHOJEDnEihziRQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KIW//uBcA/LBaLu7u70cfu7OxcXFyMPvZHsJND3Gd38oeHh1HW8c7e3t7amhcgGMFnI7+9vR1lHe9cXl5ubm6uYjL8beyWECdyiBM5xIkc4kQOcT4M80Wenp6Wy+XoY7e2tvwZgn8n8i9yf3+/WCxGH3t6enp8fDz6WEoc1yFO5BAncojznnwymUxeXl6GYRh97Gw2m06no4+FDxH5ZDKZ3NzcPD4+jj727Ozs4OBg9LHwIY7rECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KIEznEiRziRA5xIoc4kUOcyCFO5BAncogTOcSJHOJEDnEihziRQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KIEznEiRziRA5xIoc4kUOcyCFO5BAncogTOcSJHOJEDnEihziRQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KIEznEiRziRA5xIoc4kUOcyCFO5BAncogTOcSJHOJEDnEihziRQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFD3Pp3LwCahmFYxdjpdPrRW0QO43t+fp7P56uYfHV19dFbHNchTuQQJ3KIEznEiRziRA5xIoc4kUOcyCFO5BAncoj7AZ9dn8/ny+Vy9LHn5+c7Ozujj4X/mx8Q+WRl/9ADfwPHdYgTOcSJHOJEDnEihziRQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KIEznEiRziRA5xIoc4kUOcyCFO5BAncogTOcSJHOJEDnEihziRQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KIEznEiRziRA5xIoc4kUOcyCFO5BAncogTOcSJHOJEDnEihziRQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KIW//k/ScnJ6Os453ZbPZ2fXR09Pr6OvpDbGxsvF0fHh7u7++P/hDb29tv1wcHB79/OZbd3d3RZ36v7e3tVTypfv9xf4HZbLaiNP6D6TAM370GYIUc1yFO5BD3sffk19fXK1oH8Oeurq7+/Jvt5BDnF28QZyeHOJFDnMghTuQQJ3KIEznEiRziRA5xIoc4kUOcyCFO5BAncogTOcT9ApHoSZJHEi3GAAAAAElFTkSuQmCC">
+                            </td>
+                            <td>1.221</td>
+                            <td>1.4</td>
+                            <td>1.134</td>
+                            <td>-0.8</td>
+                            <td>3.7</td>
+                        </tr>
+                        <tr>
+                            <td>Macroeconomic data</td>
+                            <td>
+                                <div class='tooltip'>GDP
+                                    <span class="tooltiptext">Gross domestic product</span>
+                                </div>
+                                <p>(numeric/continous)</p>
+                            </td>
+                            <td><img style="max-height: 50px"
+                                    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAUwAAADnCAIAAAD6oPiRAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAEJklEQVR4nO3cMU+TawCG4VIKCQ1GE+3CoHNZ+f8/wZG4kBgT3exASLCmgTq4MJxzooe3gneva+pAn76B3OlH2/Rgu91OgK7pUx8A2C2RQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KIEznEiRziRA5xIoc4kUOcyCFO5BAncogTOcSJHOJEDnEihziRQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFD3OypD0DQ7e3thw8fRq0tFou3b9+OWttDnskhTuQQ53J9r63X61FT0+n0+Ph41BoDiXyvXV5ejpqaz+fL5XLUGgO5XIc4kUOcyCFO5BAncogTOcSJHOJEDnEihziRQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KIEznEiRziRA5xIoc4kUOcyCFO5BAncogTOcSJHOJEDnEihziRQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KIEznEiRziRA5xIoc4kUOcyCFO5BAncogTOcSJHOJEDnEihziRQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KIEznEiRziRA5xIoc4kUOcyCFu9tQH+GebzWa1Wo1aOzk5efny5ag1+Ls838i/fPkyam2xWIicveVyHeJEDnEihziRQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KIEznEiRzinuk3w+zOzc3NwC+Wev369YsXL0atwS7sXeTfv38fGPnp6anIeeb2LnL+atvt9v7+ftTadDo9ODgYtfZsiZy/yWq1+vTp06i1d+/evXnzZtTas+WFN4gTOcSJHOJEDnEih7jHvrp+fX095ByTyeTw8PD09HTUGvDTYyO/uroaco7JZDKfz5fL5ag14Cfvkw9zd3c38HMas9lsHz6nwR8g8mE+f/789evXUWvL5XI+n49aY5+JHHbr48eP3759G7V2fn7+u3cROezWer0eGPn/4C00iBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KIEznEiRziRA5xIoc4kUOcyCFO5BAncogTOcSJHOJEDnEihziRQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KIEznEiRziRA5xIoc4kUOcyCFO5BAncogTOcSJHOJEDnEihziRQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KIEznEiRziRA5xIoe42SPvf3Z2NuQck8nk6Ojo4e2By/P5/OHtHS2/evXq+Ph41PLD38bu+PONmvoPi8Vis9n8gQf6Nwfb7fYJHx7YNZfrECdyiPu9/8nfv3+/o3MAv+7i4uLXf9gzOcR54Q3iPJNDnMghTuQQJ3KIEznEiRziRA5xIoc4kUOcyCFO5BAncogTOcSJHOJ+AMO/YlHYXJnGAAAAAElFTkSuQmCC">
+                            </td>
+                            <td>0.0151</td>
+                            <td>0.32</td>
+                            <td>148.6770</td>
+                            <td>-4.06</td>
+                            <td>3.51</td>
+                        </tr>
+
+                        <!-- Academic data at enrollment -->
+                        <tr>
+                            <td>Academic data at enrollment</td>
+                            <td>
+                                <div class='tooltip'>Application mode
+                                    <span class="tooltiptext">1 - 1st phase - general contingent<br />
+                                        2 - Ordinance No. 612/93<br />
+                                        3 - 1st phase - special contingent (Azores Island)<br />
+                                        4 - Holders of other higher courses<br />
+                                        5 - Ordinance No. 854-B/99<br />
+                                        6 - International student (bachelor)<br />
+                                        7 - 1st phase - special contingent (Madeira Island)<br />
+                                        8 - 2nd phase - general contingent<br />
+                                        9 - 3rd phase - general contingent<br />
+                                        10 - Ordinance No. 533-A/99, item b2) (Different Plan)<br />
+                                        11 - Ordinance No. 533-A/99, item b3 (Other Institution)<br />
+                                        12 - Over 23 years old<br />
+                                        13 - Transfer<br />
+                                        14 - Change of course<br />
+                                        15 - Technological specialization diploma holders<br />
+                                        16 - Change of institution/course<br />
+                                        17 - Short cycle diploma holders<br />
+                                        18 - Change of institution/course (International)
+                                    </span>
+                                </div>
+                                <p>(numeric/discrete)</p>
+                            </td>
+                            <td><img style="max-height: 50px"
+                                    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAUwAAADnCAIAAAD6oPiRAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAER0lEQVR4nO3czU5TawCG0SqgUsBgtAO4Ahh7/5fQeAfMICEpOhAl0IaewUlOGJyBxo9In6416oSXHZqne/eHvlqv1xOg6/XfPgDgeYkc4kQOcSKHOJFDnMghTuQQJ3KIEznEiRziRA5xIoc4kUOcyCFO5BAncogTOcSJHOJEDnEihziRQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KIEznEiRzidv/w5+fz+ZDjmEwm0+n0/Px81BrwL2dyiBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KIEznEiRziRA5xIoc4kUOcyCFO5BAncogTOcSJHOJEDnEihziRQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KIEznEiRziRA5xIoc4kUOcyCFO5BAncogTOcSJHOJEDnEihziRQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KIEznEiRziRA5xIoc4kUOcyCFO5BAncogTOcSJHOJEDnEihziRQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQt/u3D6BjuVyuVqtRa2/fvn392kMwA4h8mKurq8ViMWrt/Px8Op2OWmObOVdAnMghTuQQJ3KIEznEiRziRA5xIoc4kUOcyCFO5BAncojzDypb7cuXL6Om9vf3z87ORq0xkMi32uPj46ip9Xo9aoqxXK5DnMghTuQQJ3KIEznEiRziRA5xIoc4kUOcyCFO5BAncogTOcSJHOJEDnEihziRQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KIEznEiRziRA5xIoc4kUOcyCFO5BAncogTOcSJHOJEDnEihziRQ5zIIU7kELf7tw+AoIeHh8vLy1FrR0dHnz59GrW2hUTOeKvV6uvXr6PWdnZ2Rk1tJ5frECdyiBM5xIkc4kQOcSKHOG+hsUm+f/9+c3Mzau3jx49HR0ej1l4skbNJ7u/vB0Z+eHi4DZG7XIc4kUOcyCFO5BAncogTOcSJHOJEDnEihziRQ9wL/Vjrcrkc+OnF6XT6/v37UWuwWV5u5AO/CXA2m4mcrfVCI+ep+/v7x8fHUWv7+/ujptgIIt8AFxcXP3/+HLX2+fPnUVNsBC+8QZzIIU7kECdyiBM5xIkc4kQOcVv3PvmPHz++ffs2au3Dhw8HBwej1uA5bF3kd3d319fXo9bevXsn8oabm5vb29tRaycnJ2/evBm19oe2LnL4X7e3t4vFYtTabDZ7OZF7Tg5xf3omPz09HXIck8lkb2/v6e2By9Pp9OntZ1o+Pj4e+OD99K8xm82Wy+Wo5afcff/dfr67b7Vardfr51j+Ra8G/nrgBXK5DnEih7jfe04+n8+f6TiAX/dbXwrgTA5xXniDOGdyiBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KIEznEiRziRA5xIoc4kUPcPwFeei/aHWZVAAAAAElFTkSuQmCC">
+                            </td>
+                            <td>6.79</td>
+                            <td>8</td>
+                            <td>0.78</td>
+                            <td>1</td>
+                            <td>18</td>
+                        </tr>
+                        <tr>
+                            <td>Academic data at enrollment</td>
+                            <td>
+                                <div class='tooltip'>Application order
+                                    <span class="tooltiptext">
+                                        Application order (between 0 - first choice; and 9 last choice)
+                                    </span>
+                                    <p>(numeric/discrete)</p>
+                                </div>
+                            </td>
+                            <td><img style="max-height: 50px"
+                                    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAUwAAADnCAIAAAD6oPiRAAAACXBIWXMAAA7EAAAOxAGVKw4bAAADj0lEQVR4nO3csU4iURiA0UWJFCbSUZjYaWfn+z8CvYmlJTUFRjLbWmyBGb3Kt+dUFJD/EvgYZsJlMU3TH6Dr4qcXAHwvkUOcyCFO5BAncogTOcSJHOJEDnEihziRQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KIEznEiRziRA5xIoc4kUOcyCFO5BAncogTOcSJHOJEDnEihziRQ9xy5uO32+2XrON0m83m7u5u8FA4X47kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KIEznEiRziRA5xIoc4kUOcyCFO5BAncogTOcSJHOJEDnEihziRQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KIEznEiRziRA5xIoc4kUOcyCFO5BAncogTOcSJHOJEDnEihziRQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KIEznEiRziRA5xIoc4kUOcyCFO5BAncogTOcSJHOJEDnEihziRQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KIEznEiRziRA5xIoc4kUOcyCFO5BAncogTOcSJHOJEDnEihziRQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KIEznEiRziRA5xIoc4kUOcyCFO5BAncogTOcSJHOJEDnEihziRQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KIEznEiRziRA5xIoc4kUOcyCFO5BAncogTOcSJHOJEDnEihziRQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KIEznEiRziRA5xIoe45U8vYJZpmqZpGjz04sInI+fkvCPf7Xavr6+Dhz4+Pq5Wq8FD/+l4PL69vQ0eenV1dXl5OXgoc5x35P+5/X7/8vIyeOjDw8PNzc3gocwh8lne398Hny8sFovl0qvGJ3i7zPL8/Hw4HEZOXK/X9/f3Iydy7lxDgjiRQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFDnMghbu5v129vb79kHae7vr7+eHv8Aj5utNxsNsfjceT0j7tcV6vV+Kf/S7bZ/gbn8ncGi/GrBEbydR3iRA5xnzsn326337QO4HRPT0+n39mRHOJceIM4R3KIEznEiRziRA5xIoc4kUOcyCFO5BAncogTOcSJHOJEDnEihziRQ9xfY98/mBFTHIIAAAAASUVORK5CYII=">
+                            </td>
+                            <td>1.74</td>
+                            <td>1</td>
+                            <td>0.76</td>
+                            <td>1</td>
+                            <td>9</td>
+                        </tr>
+                        <tr>
+                            <td>Academic data at enrollment</td>
+                            <td>
+                                <div class='tooltip'>Course
+                                    <span class="tooltiptext">
+                                        1 - Biofuel Production Technologies<br />
+                                        2 - Animation and Multimedia Design<br />
+                                        3 - Social Service (evening attendance)<br />
+                                        4 - Agronomy<br />
+                                        5 - Communication Design<br />
+                                        6 - Veterinary Nursing<br />
+                                        7 - Informatics Engineering<br />
+                                        8 - Equiniculture<br />
+                                        9 - Management<br />
+                                        10 - Social Service<br />
+                                        11 - Tourism<br />
+                                        12 - Nursing<br />
+                                        13 - Oral Hygiene<br />
+                                        14 - Advertising and Marketing Management<br />
+                                        15 - Journalism and Communication<br />
+                                        16 - Basic Education<br />
+                                        17 - Management (evening attendance)
+                                    </span>
+                                </div>
+                                <p>(numeric/discrete)</p>
+                            </td>
+                            <td><img style="max-height: 50px"
+                                    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAUwAAADnCAIAAAD6oPiRAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAEb0lEQVR4nO3dMU9TewCH4SNYxJMYZagDJDg78/0/gjObDkYdJCoaSgKY3uEmNyw3kcu/F3h5nqkD/XFC89JTcmifrNfrCejauusDADZL5BAncogTOcSJHOJEDnEihziRQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KIEznEiRziRA5xIoc4kUOcyCFO5BAncogTOcSJHOJEDnEihziRQ5zIIU7kEPf0rg+AoNVqdXx8PGptuVweHh6OWnuEPJNDnMghTuQQJ3KIEznEiRziRA5xIoc4kUOcyCFO5BAncogTOcSJHOJEDnEihziRQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KIEznEiRziRA5xIoc4kUOcyCFO5BAncogTOcSJHOJEDnEihziRQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFD3NO7PgC4gdVqdXp6Omrt5cuX8zyPWru3RP6ovX//ftTUs2fPDg4ORq39m9Vq9fnz51Fri8VC5MR9//591NQ8z/9D5PwHXpNDnMghTuQQJ3KIEznEiRziRA5xIoe4R3cxzPn5+a9fv0atvXjx4vnz56PWYBMeXeRnZ2cfP34ctfbmzRuRc885XYc4kUOcyCFO5BAncogTOcSJHOJEDnEihziRQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KIEznEiRziRA5xIoc4kUOcyCFO5BAncogTOcTd048uXq/XV1dXo9a2tra2t7dHrcHDck8jPz8/Pz4+HrW2XC4PDw9HrcHD4nQd4kQOcSKHuHv6mpzrTk5OLi4uRq3t7++PmuJBEPkD8PXr19VqNWpN5I+N03WIEznEiRziRA5xIoc4kUOcyCFO5BAncogTOcS5rHWYi4uLgW90sbu7u7XlVzADiHyYL1++nJycjFp7+/btPM+j1njMPFdAnMghTuQQJ3KIEznEiRziRA5xIoc4kUOcK95gs37+/Pn79+9Ra3t7eze9i8hhsz59+jTwHbWPjo5uehen6xAncogTOcSJHOJEDnEihziRQ5zIIU7kECdyiLvtZa0fPnwYchzTNO3s7BwcHIxaA/5228i/ffs25DimaZrnWeQwnNN1iPNfaDBN0/Tjx4+zs7NRa69fv14sFqPWbknkME3TdHp6OvADcPb29u5P5E7XIU7kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KIEznEiRziRA5xIoc4kUOcyCFO5BAncogTOcSJHOJEDnEihziRQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KIEznEiRzint7y/vv7+0OOY5qmxWJx/fbA5Xmer9/e0PKrV692dnZGLV//aSyXy8vLy1HL13n4/rn9EB++P/RkvV7f4bcHNs3pOsSJHOJu9pr83bt3GzoO4M8dHR39+Rd7Joc4f3iDOM/kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KIEznEiRziRA5xIoe4vwDdqX3w6HsmXwAAAABJRU5ErkJggg==">
+                            </td>
+                            <td>9.99</td>
+                            <td>10</td>
+                            <td>0.43</td>
+                            <td>1</td>
+                            <td>17</td>
+                        </tr>
+                        <tr>
+                            <td>Academic data at enrollment</td>
+                            <td>
+                                <div class='tooltip'>Daytime/evening attendance
+                                    <span class="tooltiptext">
+                                        1 - daytime<br />
+                                        0 - evening
+                                    </span>
+                                    <p>(numeric/discrete)</p>
+                                </div>
+                            </td>
+                            <td><img style="max-height: 50px"
+                                    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAUwAAADnCAIAAAD6oPiRAAAACXBIWXMAAA7EAAAOxAGVKw4bAAADB0lEQVR4nO3cwYmDUABF0cmQKuzBlf2X4Mpu3DgtRNR8uHPOOsKDcPnqwtdxHD9A1+/oAcCzRA5xIoc4kUOcyCFO5BAncogTOcSJHOJEDnEihziRQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KIEznEiRziRA5xIoc4kUOcyCFO5BAncogTOcSJHOJEDnHv0QMYaV3X0RM4Z1mWs5c4ySFO5BAncogTOcSJHOJEDnEihziRQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KIEznEiRziRA5xIoc4kUOcyCFO5BAncogTOcSJHOJEDnEihziRQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KIEznEiRziRA5xIoc4kUOcyCFO5BAncogTOcSJHOJEDnEihziRQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KIEznEiRziRA5xIoc4kUOcyCFO5BAncogTOcSJHOJEDnEihziRQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KIEznEiRziRA5xIoc4kUOcyCFO5BAncogTOcSJHOJEDnEihziRQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KIEznEiRziRA5xIoc4kUOcyCFO5BAncogTOcSJHOJEDnEihziRQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KIEznEiRziRA5xIoc4kUOcyCFO5BAncogTOcSJHOJEDnEihziRQ5zIIe598fpt227ZwdfM8zx6Al91NfJ932/ZATzE7TrEiRziRA5xIoc4kUOcyCFO5BAncogTOcSJHOJEDnEihziRQ5zIIU7kECdyiBM5xIkc4kQOcVe/8TZN0y07GMLf9x+8juMYvQF4kNt1iBM5xJ17Jl/X9aEdwOeWZfn8x05yiPPiDeKc5BAncogTOcSJHOJEDnEihziRQ5zIIU7kECdyiBM5xIkc4kQOcSKHuD/p5hdXygbdpgAAAABJRU5ErkJggg==">
+                            </td>
+                            <td></td>
+                            <td>1</td>
+                            <td>0.344</td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Academic data at enrollment</td>
+                            <td>
+                                <div class='tooltip'>Previous qualification
+                                    <span class="tooltiptext">
+                                        1 - Secondary education<br />
+                                        2 - Higher education - bachelor's degree<br />
+                                        3 - Higher education - degree<br />
+                                        4 - Higher education - master's<br />
+                                        5 - Higher education - doctorate<br />
+                                        6 - Frequency of higher education<br />
+                                        7 - 12th year of schooling - not
+                                        completed<br />
+                                        8 - 11th year of schooling - not
+                                        completed<br />
+                                        9 - Other - 11th year of schooling<br />
+                                        10 - 10th year of schooling<br />
+                                        11 - 10th year of schooling - not completed<br />
+                                        12 - Basic education 3rd cycle
+                                        (9th/10th/11th year)<br />
+                                        13 - Basic education 2nd cycle
+                                        (6th/7th/8th year)<br />
+                                        14 - Technological specialization course<br />
+                                        15 - Higher education - degree (1st
+                                        cycle)<br />
+                                        16 - Professional higher technical course<br />
+                                        17 - Higher education - master (2nd
+                                        cycle)
+                                    </span>
+                                </div>
+                                <p>(numeric/discrete)</p>
+                            </td>
+                            <td><img style="max-height: 50px"
+                                    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAUwAAADnCAIAAAD6oPiRAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAECElEQVR4nO3YzS5kbQBG0SJIFCIiNeEKjN3/JdRNMBI/E6FVlahv4IsY9KDFK623tUZnoB5vsHOOs7FerydA1+bfPgDwtUQOcSKHOJFDnMghTuQQJ3KIEznEiRziRA5xIoc4kUOcyCFO5BAncogTOcSJHOJEDnEihziRQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KIEznEiRziRA5xW5/8/Hw+H3KOyWQynU7Pzs5GrQGv3MkhTuQQJ3KIEznEiRziRA5xIoc4kUOcyCFO5BAncogTOcSJHOJEDnEihziRQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KIEznEiRziRA5xIoc4kUOcyCFO5BAncogTOcSJHOJEDnEihziRQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KIEznEiRziRA5xIoc4kUOcyCFO5BAncogTOcSJHOJEDnEihziRQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KIEznEiRziRA5xIoc4kUOcyCFO5BAncogTOcSJHOJEDnEihziRQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KIEznEiRziRA5xIoc4kUOcyCFO5BAncogTOcSJHOJEDnEihziRQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KIEznEiRziRA5xIoc4kUOcyCFO5BAncogTOcSJHOJEDnEihziRQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KIEznEiRziRA5xIoc4kUOcyCFO5BAncogTOcSJHOJEDnEihziRQ5zIIU7kELf1tw8AH3B/f397eztq7fj4+ODgYNTatyVy/iWLxWJg5Pv7+z8hco/rECdyiPO4znir1erq6mrU2t7e3tHR0ai1H0jkjDc28tlsJvLP+KaRPz8/393djVrb3d39Ce9X4Le+aeTL5fLy8nLU2mw2Ezk/lhdvECdyiPumj+u8d319vVwuR62dnp6OmuKf8OMiX61Wv379GrW2u7u7vb39er1YLJ6fnwcub27+/5x1c3Pz+Pg4alnkv3VxcXF9fT1q7ezsbDqdjlr7pM9GfnJyMuQck8nkrZbX64HL73/cq9Xq4eFh1PLW1tbbsZ+engamuLOz8xb5bDZbrVajlt9bLBajpjY2NnZ2dl6vv+7XN51Ov2j58PDw/V/gJ72fenx8fHl5GbW8v7//0Y9srNfrUd8e+Ia8eIM4kUPcx/4nn8/nX3QO4M+dn5//+Re7k0OcF28Q504OcSKHOJFDnMghTuQQJ3KIEznEiRziRA5xIoc4kUOcyCFO5BAncoj7D0LNbQ0YKmlwAAAAAElFTkSuQmCC">
+                            </td>
+                            <td>2.51</td>
+                            <td>1</td>
+                            <td>1.57</td>
+                            <td>1</td>
+                            <td>17</td>
+                        </tr>
+
+                        <!-- Academic data at the end of 1st semester -->
+                        <tr>
+                            <td>Academic data at the end of 1st semester</td>
+                            <td>
+                                <div class='tooltip'>Curricular units 1st sem (credited)
+                                    <span class="tooltiptext">
+                                        Number of curricular units credited in the 1st semester
+                                    </span>
+                                </div>
+                                <p>(numeric/discrete)</p>
+                            </td>
+                            <td><img style="max-height: 50px"
+                                    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAUwAAADnCAIAAAD6oPiRAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAD9klEQVR4nO3ZvUpjbQBGUY2TKFHUJoXegbX3fwlehT+FWihIUILJVwji180wr6OzZ63qFObhVdicc8z2ZrPZAromX30A4HOJHOJEDnEihziRQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KIEznEiRziRA5xIoc4kUOcyCFO5BAncogTOcSJHOJEDnEihziRQ5zIIU7kECdyiBM5xIkc4n785ucvLi6GnGNra2s+n5+dnY1aA964k0OcyCFO5BAncogTOcSJHOJEDnEihziRQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KIEznEiRziRA5xIoc4kUOcyCFO5BAncogTOcSJHOJEDnEihziRQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KIEznEiRziRA5xIoc4kUOcyCFO5BAncogTOcSJHOJEDnEihziRQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KIEznEiRziRA5xIoc4kUOcyCFO5BAncogTOcSJHOJEDnEihziRQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KIEznEiRziRA5xIoc4kUOcyCFO5BAncogTOcSJHOJEDnEihziRQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KIEznEiRziRA5xIoc4kUOcyCFO5BAncogTOcSJHOJEDnEihziRQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KIEznEiRziRA5xIoc4kUOcyCFO5BAncogTOcSJHOJEDnEihziRQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KIEznEiRziRA5xIoc4kUPcj68+wJ+2XC4fHx9HrR0dHc3n81Fr8Bm+aeQvLy9XV1ej1g4PDxeLxdv1crm8ubkZtTydTkXON/dNI399fX14eBi1Np1OR019ifv7+9VqNWrt5ORk1BR/hW8a+d9ovV5vNptRa5PJZHt7++367u5uuVyOWhb5v0bkw1xeXt7f349aOzs7+wMvAtfX16OmZrPZ+zvRarW6vb0dtby/v398fDxq7R/0u5Gfnp4OOcfW/x+qp9PpwOWPtczn809aPj4+ns1mo5Y//jUWi8XAx/WPJpNhX6+8P3d86vLz8/PT09Oo5YODg729vbfr19fXgQ9iOzs778derVbr9XrU8u7u7q9+ZHvgLwZ8Q74nhziRQ9yvvZNfXFx80jmAn3d+fv7zP+xODnH+8QZx7uQQJ3KIEznEiRziRA5xIoc4kUOcyCFO5BAncogTOcSJHOJEDnEih7j/AFoRYFP+dtUKAAAAAElFTkSuQmCC">
+                            </td>
+                            <td>0.42</td>
+                            <td>0</td>
+                            <td>3.61</td>
+                            <td>0</td>
+                            <td>13</td>
+                        </tr>
+                        <tr>
+                            <td>Academic data at the end of 1st semester</td>
+                            <td>
+                                <div class='tooltip'>Curricular units 1st sem (enrolled)
+                                    <span class="tooltiptext">Number of curricular units enrolled in the 1st
+                                        semester</span>
+                                </div>
+                                <p>(numeric/discrete)</p>
+                            </td>
+                            <td><img style="max-height: 50px"
+                                    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAUwAAADnCAIAAAD6oPiRAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAESElEQVR4nO3dwUpbWwCG0cTUStMqClqkg3bsuO//CD6BgopD24EKtlLsuYOCeEe3xZ2r/VxrlNHPJuHznISo82maZkDX2lMfAFgtkUOcyCFO5BAncogTOcSJHOJEDnEihziRQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KIEznEiRziRA5xIoc4kUOcyCFO5BAncogTOcSJHOJEDnEihziRQ9yrpz5Ax9nZ2ZcvX0atHRwcLJfLUWu8ZK7kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KIEznEiRziRA5xIoc4kUOcyCFO5BAncogTOcSJHOJEDnEihziRQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KIEznEiRziRA5xIoc4kUOcyCFO5BAncogTOcSJHOJEDnEihziRQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KIEznEiRziRA5xIoc4kUOcyCFO5BAncogTOcSJHOJEDnEihziRQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KIEznEiRziRA5xIoc4kUOcyCFO5BAncogTOcSJHOJEDnEihziRQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFD3KunPsD/bZqmaZpGrc3n8/l8PmoNVuHFRf7169ezs7NRa58+fdrd3R21Bqvgdh3iRA5xIoc4kUOcyCFO5BAncogTOcSJHOJEDnEihziRQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KIEznEiRziRA5xIoc4kUOcyCFO5BAncogTOcSJHOJEDnEihziRQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQ9+qpD8B/+/bt28+fP0etvX37dtQUfwWR/wVOT09vbm5GrX3+/HnUFH8Ft+sQJ3KIEznEiRziRA5xIoc4kUOcyCHusV+Guby8HHKO2Wy2WCzevXs3ag345bGRHx8fDznHbDZbLpcHBwej1oBf3K5DnMghTuQQJ3KIEznE+X3yF+3o6GjU1MbGxsePH0etMZDIX7Srq6tRU8vlctQUY7ldhzhXcsa7vb09Pz8ftba1tfX+/ftRay+QyBnv7u5u4PedX79+PWrqZXqmkX///v3k5GTU2s7Ozv7+/qg1ntD19fXFxcWotb29vc3NzV+Pp2mapmnU8traM3oj/NjIP3z4MOQcs9lsfX39/vFisdje3h61/ObNm/vHy+Vy4Jkfftq0vb098Jrz8NnY29v78ePHqOWHVvTyra+vr+hJXiwWD1/NR1osFvePr66uBv5J3N3d3fsn5O7ubtTs7N9n/k3zgT+9gGfoGd1UAKsgcoj7s/fkh4eHKzoH8Pv+6N/guJJDnA/eIM6VHOJEDnEihziRQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQ9w+xsWS+Y0uULgAAAABJRU5ErkJggg==">
+                            </td>
+                            <td>6.01</td>
+                            <td>6</td>
+                            <td>0.32</td>
+                            <td>0</td>
+                            <td>18</td>
+                        </tr>
+                        <tr>
+                            <td>Academic data at the end of 1st semester</td>
+                            <td>
+                                <div class='tooltip'>Curricular units 1st sem (evaluations)
+                                    <span class="tooltiptext">Number of evaluations to curricular units in the 1st
+                                        semester</span>
+                                </div>
+                                <p>(numeric/discrete)</p>
+                            </td>
+                            <td><img style="max-height: 50px"
+                                    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAUwAAADnCAIAAAD6oPiRAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAEEklEQVR4nO3dsU6iaQCGUQaBgspCLCz0HvT+L8FaS01sJlGjDcZgYIrZbCy2mF0/V308p6LQN1/Ux/8HQ/yx2+0mQNf0ow8AvC+RQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KIEznEiRziRA5xIoc4kUOcyCFO5BAncogTOcSJHOJEDnEihziRQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFD3OyjD/DP1uv1xcXFqLXVanV8fPz78Xa73W63o5an0+l06hcln9onjfz93N/fX19fj1o7OTk5ODgYtQbvwVUI4kQOcSKHOJFDnMghTuQQJ3KIEznEiRziRA5xIoc4kUOcyCFO5BAncogTOcSJHOJEDnEihziRQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KIEznEiRziRA5xIoc4kUOcyCFO5BAncogTOcSJHOJEDnEihziRQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KIEznEiRziRA5xIoc4kUOcyCFO5BAncogTOcSJHOJEDnEihziRQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KIEznEiRziRA5xIoc4kUOcyCFO5BAncogTOcSJHOJEDnEihziRQ5zIIU7kECdyiBM5xIkc4mYffYCOh4eH9Xo9am21Ws3n81FrfGciH+bx8fH29nbU2v7+vsgZwu06xIkc4kQOcSKHOJFDnMghTuQQJ3KIEznEiRziRA5xIoc4kUOcyCFO5BAncogTOcSJHOJEDnEihziRQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KIm73x829uboacYzKZLBaLw8PDUWvAb2+N/OfPn0POMZlMlsulyGE4t+sQJ3KIEznEiRziRA5xIoc4kUOcyCFO5BAncogTOcSJHOJEDnEihziRQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KIe+u/SeJ/cHl5uV6vR62dnp6OmuJLEPkXsNvtdrvdR5+Cr8rtOsSJHOJEDnEihziRQ5zIIU7kEOfv5N/a1dXVqKnFYnF0dDRqjYFE/q3d3d2NmloulyL/nNyuQ5wrOePtdruXl5dRa9PpdG9vb9TaNyRyxnt6erq4uBi1tlqtjo+PR619Q2+NfODTsPl8/vrxwOXlcvn68Tst7+/vLxaLUcuvvxqr1Wqz2Yxafu3Lffu22+3Ae4TZbDad/vWM9fn5eeAXeblc/r282WwGvr/oP/yM/fD2JmjzwhvEiRzi/t1z8vPz83c6B/Dnzs7O/vyDXckhzgtvEOdKDnEihziRQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KI+wX4qmfBCyys6gAAAABJRU5ErkJggg==">
+                            </td>
+                            <td>8.01</td>
+                            <td>8</td>
+                            <td>0.47</td>
+                            <td>0</td>
+                            <td>32</td>
+                        </tr>
+                        <tr>
+                            <td>Academic data at the end of 1st semester</td>
+                            <td>
+                                <div class='tooltip'>Curricular units 1st sem (approved)
+                                    <span class="tooltiptext">Number of curricular units approved in the 1st
+                                        semester</span>
+                                </div>
+                                <p>(numeric/discrete)</p>
+                            </td>
+                            <td><img style="max-height: 50px"
+                                    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAUwAAADnCAIAAAD6oPiRAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAEMklEQVR4nO3bMUtbawDH4aipkFhpobq4dFJw9vt/BAdHRzt0amldFNKjuUPh4nDhXvH12vzyPFOW/Hk5+iPnBN1Zr9czoGv3rQ8AvC6RQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KIEznEiRziRA5xIoc4kUOcyCFO5BAncogTOcSJHOJEDnEihziRQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFD3PytD9Bxc3Pz7du3UWvn5+fL5XLUGtvMJznEiRziRA5xIoc4kUOcyCFO5BAncogTOcSJHOJEDnEihziRQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KIEznEiRziRA5xIoc4kUOcyCFO5BAncogTOcSJHOJEDnEihziRQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KIEznEiRzi5m99gP/bNE2r1WrU2v7+/ny+ddeQzbJ1v6A/f/68ubkZtfb58+ejo6NRa/Aa3K5DnMghTuQQJ3KIEznEiRziRA5xIoc4kUOcyCFO5BAncogTOcSJHOJEDnEihziRQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KIEznEiRziRA5xIoe4+Qvff3V1NeQcs9lssVicnZ2NWgN+e2nk0zQNOcdsNnt4eBg1BfzN7TrEiRziRA5xIoc4kUOcyCFO5BAncogTOcSJHOJEDnEihziRQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KIEznEiRziRA5xIoc4kUOcyCFO5BAncogTOcSJHOJEDnEihziRQ5zIIU7kECdyiBM5xIkc4uZvfYB/Nk3Tjx8/Rq0tFov379+PWoPN8odGvlqtvnz5Mmrt+PhY5Gwtt+sQJ3KIEznEiRziRA5xIoc4kUOcyCFO5BAncogTOcSJHOJEDnEihziRQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KIEznEiRziRA5xIoc4kUOcyCFu/tYH4N89Pj6u1+tRa3t7e6Om2Agi3wDX19d3d3ej1i4uLkZNsRHcrkOcyCFO5BAncojzxdtWu7q6GjW1XC5PT09HrTGQyLfaNE2vMbVarb5+/Tpq+fDw8NOnT6PWtpDIGW+apu/fv49a293dFflLeCaHOJFDnNt1Nsn9/f3t7e2otQ8fPiwWi1Frf6yXRn5ycjLkHLPZ7N27d09fD1xeLpdPX7/S8sePH/f390ctP70ax8fHv379GrX81Mb9+Nbr9cA/43869fDw8Pj4OGp5Pp/v7Oz8fn1/fz9w+eDg4Llv2Rl4yYA/kGdyiBM5xD3vmfzy8vKVzgH8d8/6f2Gf5BDnizeI80kOcSKHOJFDnMghTuQQJ3KIEznEiRziRA5xIoc4kUOcyCFO5BAncoj7C770dmkZqKbxAAAAAElFTkSuQmCC">
+                            </td>
+                            <td>4.43</td>
+                            <td>5</td>
+                            <td>0.59</td>
+                            <td>0</td>
+                            <td>16</td>
+                        </tr>
+                        <tr>
+                            <td>Academic data at the end of 1st semester</td>
+                            <td>
+                                <div class='tooltip'>Curricular units 1st sem (grade)
+                                    <span class="tooltiptext">Grade average in the 1st semester (between 0 and
+                                        20)</span>
+                                </div>
+                                <p>(numeric/continous)</p>
+                            </td>
+                            <td><img style="max-height: 50px"
+                                    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAUwAAADnCAIAAAD6oPiRAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAD00lEQVR4nO3dsUojXQCG4dlgAjuF2gTBwj61938J1mJtI2ohIkJUzBbbWO7i8Tf/u89Tx49D9M3MiOCP3W43AV2L7z4A8LVEDnEihziRQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KIEznEiRziRA5xIoc4kUOcyCFO5BAncogTOcSJHOJEDnEihziRQ5zIIU7kECdyiBM5xIkc4kQOcQfffQCCnp+fLy8vR62t1+uzs7NRa/8gV3KIEznEiRziRA5xIoc4kUOcyCFO5BAncogTOcSJHOJEDnEihziRQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KIEznEiRziRA5xIoc4kUOcyCFO5BAncogTOcSJHOJEDnEihziRQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KIEznEiRziRA5xIoc4kUOcyCFO5BAncogTOcSJHOJEDnEihziRQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KIEznEiRziRA5xB999AL7T9fX1qKnVanVycjJqjYFE/k+7vb0dNTXPs8j3k9t1iBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KIEznEiRziRA5xIoc4kUOcyCFO5BAncogTOcSJHOJEDnEihziRQ5zIIU7kECdyiBM5xIkc4kQOcSKHuM/+V9Onp6ch55imabFYzPM8ag347bORX11dDTnHNE3zPG82m1FrwG9u1yFO5BAncogTOcSJHOJEDnEihziRQ5zIIU7kECdyiPvs367Df+nx8fHu7m7U2nq9Pjw8HLW2t0TO/8nLy8vDw8OotaOjo1FT+8ztOsSJHOJEDnEihziRQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KIEznEiRziRA5xIoc4kUOcyCFO5BAncogTOcSJHOJEDnEihziRQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KIEznEiRziRA5xIoc4kUOcyCFO5BB38N0HgL2w3W5fX19Hrc3zvFjsyxVU5DBN03Rzc3N/fz9qbbPZzPM8au2T9uXDBvgiIoc4kUPcZ5/JT09Ph5xjmqblcjlqKubt7W23241a+/g+f9G3b7lcDlz++HA7z/MXLR8fH69Wq1HLH9+N7Xb7/v4+avnnz59/+yU/Bv70AHvI7TrEiRzi/u6Z/OLi4ovOAfy58/PzP3+xKznE+cUbxLmSQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KIEznEiRzifgEgnUYu/ljklgAAAABJRU5ErkJggg==">
+                            </td>
+                            <td>10.5768</td>
+                            <td>12.2786</td>
+                            <td>0.462669</td>
+                            <td>0.00</td>
+                            <td>18</td>
+                        </tr>
+                        <tr>
+                            <td>Academic data at the end of 1st semester</td>
+                            <td>
+                                <div class='tooltip'>Curricular units 1st sem (without evaluations)
+                                    <span class="tooltiptext">
+                                        Number of curricular units without evaluations in the 1st semester
+                                    </span>
+                                </div>
+                                <p>(numeric/discrete)</p>
+                            </td>
+                            <td><img style="max-height: 50px"
+                                    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAUwAAADnCAIAAAD6oPiRAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAD2UlEQVR4nO3YTU5iWxhAURDUGFE7hgZzsOX8h8AkdALGBPwDqYaJ8VXnaepiVe1aq3Ub+J0Tw+bAGe92uxHQdfC7NwDsl8ghTuQQJ3KIEznEiRziRA5xIoc4kUOcyCFO5BAncogTOcSJHOJEDnEihziRQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KIEznEiRziRA5xIoc4kUOcyCFu+ot/v1wuB9nHT66uro6OjvYxGf41TnKIEznEiRziRA5xIoc4kUOcyCFO5BAncogTOcSJHOJEDnEihziRQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KIEznEiRziRA5xIoc4kUOcyCFO5BAncogTOcSJHOJEDnEihziRQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KIEznEiRziRA5xIoc4kUOcyCFO5BAncogTOcSJHOJEDnEihziRQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KIEznEiRziRA5xIoc4kUOcyCFO5BAncogTOcSJHOJEDnEihziRQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KIEznEiRziRA5xIoc4kUOcyCFO5BAncogTOcSJHOJEDnEihziRQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KIEznEiRziRA5xIoc4kUOcyCFO5BAncogTOcSJHOJEDnEihziRQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KIEznEiRziRA5xIoc4kUOcyCFO5BAncogTOcSJHOJEDnEihziRQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQN/3dG/h/t7e3m81m8LGLxeL4+HjwsfCn+Qsiv7u7e35+HnzsfD4XOf8CX9ch7i84yb/Bzc3Nw8PD4GMXi8XZ2dngY+FLRD4ajUbr9Xq1Wg0+dh9XCfBVIv8m9/f3T09Pg4+dzWYnJydvz9vtdrvdDr7EZDKZTCaDj+Xb/Grki8VikH385OO7aj6fv76+Dr7E4eHh+/Pl5eXFxcXgS7znNxqNttvtPg72j/+Z1Wq1j+8jp6en5+fnb88vLy/7uASdTqfvl6CbzWYfn4YHBwcfPw3X6/XgS4zH49ls9va82+0eHx8HX2L03zfVJ413u90+tgL8IdyuQ5zIIe5rv8mXy+We9gF83vX19edf7CSHOBdvEOckhziRQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KIEznE/QAE02KxjJ0HfgAAAABJRU5ErkJggg==">
+                            </td>
+                            <td>0.13</td>
+                            <td>0</td>
+                            <td>4.93</td>
+                            <td>0</td>
+                            <td>8</td>
+                        </tr>
+
+                        <!-- Academic data at the end of 2nd semester-->
+                        <tr>
+                            <td>Academic data at the end of 2nd semester</td>
+                            <td>
+                                <div class='tooltip'>Curricular units 2nd sem (credited)
+                                    <span class="tooltiptext">
+                                        Number of curricular units credited in the 2nd semester
+                                    </span>
+                                </div>
+                                <p>(numeric/discrete)</p>
+                            </td>
+                            <td><img style="max-height: 50px"
+                                    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAUwAAADnCAIAAAD6oPiRAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAD9klEQVR4nO3Zu0qjWwCG4bgdD8QDFqbxDrT1/i/BW7ATRESFAU1M1F0IYrGLGWZlj/PO81SrMJ+LhJffw8bb29sE6Prnd18AWC+RQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KIEznEiRziRA5xIoc4kUOcyCFO5BAncogTOcSJHOJEDnEihziRQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFD3LdffP3FxcWQe0wmk+l0enp6OmoNeOdJDnEihziRQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KIEznEiRziRA5xIoc4kUOcyCFO5BAncogTOcSJHOJEDnEihziRQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KIEznEiRziRA5xIoc4kUOcyCFO5BAncogTOcSJHOJEDnEihziRQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KIEznEiRziRA5xIoc4kUOcyCFO5BAncogTOcSJHOJEDnEihziRQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KIEznEiRziRA5xIoc4kUOcyCFO5BAncogTOcSJHOJEDnEihziRQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KIEznEiRziRA5xIoc4kUOcyCFO5BAncogTOcSJHOJEDnEihziRQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KIEznEiRziRA5xIoc4kUOcyCFO5BAncogTOcSJHOJEDnEihziRQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KIEznEiRziRA5xIoc4kUOcyCFO5BAncogTOcSJHOJEDnEih7hvv/sC/225XN7c3Ixa29vbOzo6GrUGf5avG/n19fWotdls9j9EvlqtXl5eRq1tb29vbGyMWuNv9kUjX5/v37/f3t6OWjs+Pj44OHg/X11dDVw+PT2dTqfv58vLy/l8Pmr57Oxs1BR/hL8u8sVicXd3N2rt4ODgI/L1WSwWT09P61i+v78fNbW5uXl4eDhqjYF+NfKTk5Mh95hMJltbW5/PA5c/Honv5zUtHx0dbW9vj1r+/G7MZrPlcjlq+bOBPyB8vvBqtXp4eBi1vLu7u7+//35+fn5+fHwctTydTj8+svl8PvBNnk6nm5ub7+flcvn6+jpqeWdn52dfsvH29jbq2wNfkH+hQZzIIe7nfie/uLhY0z2AH3d+fv7jX+xJDnH+8AZxnuQQJ3KIEznEiRziRA5xIoc4kUOcyCFO5BAncogTOcSJHOJEDnEih7h/ARxpY6JcdEhnAAAAAElFTkSuQmCC">
+                            </td>
+                            <td>0.29</td>
+                            <td>0</td>
+                            <td>3.75</td>
+                            <td>0</td>
+                            <td>10</td>
+                        </tr>
+                        <tr>
+                            <td>Academic data at the end of 2nd semester</td>
+                            <td>
+                                <div class='tooltip'>Curricular units 2nd sem (enrolled)
+                                    <span class="tooltiptext">Number of curricular units enrolled in the 2nd
+                                        semester</span>
+                                </div>
+                                <p>(numeric/discrete)</p>
+                            </td>
+                            <td><img style="max-height: 50px"
+                                    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAUwAAADnCAIAAAD6oPiRAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAED0lEQVR4nO3azyqtbQCH4eVjKW+REgPJ3Nj5H4IzYKAMKGKgVf7vwS6pb7D3ziN73+u6RpT184R7vcvLytvb2wzo+u+7DwB8LZFDnMghTuQQJ3KIEznEiRziRA5xIoc4kUOcyCFO5BAncogTOcSJHOJEDnEihziRQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KIEznEiRziRA5xIoc4kUPc2ncfoOP8/Pz6+nrU2tHR0TRNo9ZYZq7kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KIEznEiRziRA5xIoc4kUOcyCFO5BAncogTOcSJHOJEDnEihziRQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KIEznEiRziRA5xIoc4kUOcyCFO5BAncogTOcSJHOJEDnEihziRQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KIEznEiRziRA5xIoc4kUOcyCFO5BAncogTOcSJHOJEDnEihziRQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KIEznEiRziRA5xIoc4kUOcyCFO5BAncogTOcSJHOJEDnEihziRQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KIEznEiRziRA5xIoc4kUOcyCFO5BAncogTOcSJHOJEDnFr330Afu3y8vLx8XHU2uHh4agp/gki/wfc3t4uFotRayJfNl6uQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KIEznEiRziRA5xIoc4kUOcyCFO5BAncogTOcSJHOJEDnEihziRQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KIEznEiRziRA5xIoc4kUOcyCFO5BAncohb++Tj7+7uhpxjNputrq5ubm6OWgN++mzkZ2dnQ84xm82maTo6Ohq1Bvzk5TrEiRziRA5xIoe4z954g/97eXm5v78ftba+vr6xsTFqbQmJnPEeHh5OT09Hre3u7h4eHo5aW0IiX2pXV1ejptbW1nZ2dkatMZDIl9rFxcWoqWmaRP53WrrIF4vFwP/S297enqZp1Bq/dHNzM/CJ6eDgYBmemD4b+f7+/pBzzGaz+Xz+/vbT09PNzc2o5Wmatra23t9dWVkZtfzR9vb2+vr6qLWPX43d3d2np6dRyx990bdvPp8PXP74NLqxsbG3tzdq+eP9vOfn59fX11HL8/n8/cfs9fX17e1t1PLq6uqfPmRl4KcH/kL+Tg5xIoe4P/ud/OTk5IvOAfy+4+Pj3/9gV3KIc+MN4lzJIU7kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KIEznEiRziRA5xPwB52ltgHG164QAAAABJRU5ErkJggg==">
+                            </td>
+                            <td>6.02</td>
+                            <td>6</td>
+                            <td>0.30</td>
+                            <td>0</td>
+                            <td>15</td>
+                        </tr>
+                        <tr>
+                            <td>Academic data at the end of 2nd semester</td>
+                            <td>
+                                <div class='tooltip'>Curricular units 2nd sem (evaluations)
+                                    <span class="tooltiptext">Number of evaluations to curricular units in the 2nd
+                                        semester</span>
+                                </div>
+                                <p>(numeric/discrete)</p>
+                            </td>
+                            <td><img style="max-height: 50px"
+                                    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAUwAAADnCAIAAAD6oPiRAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAEMUlEQVR4nO3bMU+TawCG4Q9LwTYxcWgXBxhkceb//wScXBxNw0ZYNAZKY89wTk4YNbwI3FzX1AGevGlz049+cLDf7yeg681THwB4XCKHOJFDnMghTuQQJ3KIEznEiRziRA5xIoc4kUOcyCFO5BAncogTOcSJHOJEDnEihziRQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KIEznEiRziRA5xIoe4w6c+wN92dXX17du3UWunp6er1WrUGjwG7+QQJ3KIEznEiRziRA5xIoc4kUOcyCFO5BAncogTOcSJHOJEDnEihziRQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KIEznEiRziRA5xIoc4kUOcyCFO5BAncogTOcSJHOJEDnEihziRQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KIEznEiRziRA5xIoc4kUOcyCFO5BAncogTOcSJHOJEDnEihziRQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KIEznEiRziRA5xIoc4kUOcyCHu8KkP0HF5eXl9fT1q7ezsbLFYjFrjNRP5MLvdbrvdjlrb7/ejpnjlXK5DnMghTuQQJ3KIEznEiRziRA5xIoc4kUOcyCFO5BAncogTOcSJHOJEDnEihziRQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KIEznEiRziRA5xIoc4kUOcyCFO5BAncogTOcSJHOJEDnEihziRQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KIEznEiRziRA5xIoe4wwd+/5cvX4acY5qmxWLx8ePHUWvAvx4a+e3t7ZBzTNM0m81GTcVsNpuBz/PZ2dmoKV6Eh0bOX/Djx4+fP38+9Sl4qfxODnEihziRQ5zIIU7kECdyiHumt9B+/fo18KbRfD4/Pj4etQYvyzON/Obm5uvXr6PW1uv1ycnJqDV4WVyuQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KIEznEiRzinum/mvJ37Pf7gWsHBwcD1xhF5K/a58+fR00tl8tPnz6NWmMgl+sQJ3KIEznEiRziRA5xIoc4t9AYb7fbXV9fj1pbLBbv3r0btfYKiZzxttvtZrMZtbZer0X+ECLnJfn+/fvV1dWotdVq9Rp+fDw08g8fPgw5xzRN8/n8/uOBy8vl8v7jR1p+//790dHRqOX7z8Z6vb67uxu1fN+Le/lms9nbt29HLc9ms/8f393d7Xa7UcvHx8dv3vz3gdfA2WmaDg//uNmDsX+9DDw3Pl2HOJFD3J9d319cXDzSOYDfd35+/vtf7J0c4nzwBnHeySFO5BAncogTOcSJHOJEDnEihziRQ5zIIU7kECdyiBM5xIkc4kQOcf8AbV9nY5fD670AAAAASUVORK5CYII=">
+                            </td>
+                            <td>7.83</td>
+                            <td>8</td>
+                            <td>0.47</td>
+                            <td>0</td>
+                            <td>27</td>
+                        </tr>
+                        <tr>
+                            <td>Academic data at the end of 2nd semester</td>
+                            <td>
+                                <div class='tooltip'>Curricular units 2nd sem (approved)
+                                    <span class="tooltiptext">Number of curricular units approved in the 2nd
+                                        semester</span>
+                                </div>
+                                <p>(numeric/discrete)</p>
+                            </td>
+                            <td><img style="max-height: 50px"
+                                    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAUwAAADnCAIAAAD6oPiRAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAEaUlEQVR4nO3dTUsbawCG4enRWjqCDQUpdtNdwa39/z/BfXfF0kU/7KJIg5LanEXh4O5UfMXk9rpWs8nDYLjJZEjMk/V6PQFd/zz0CQD3S+QQJ3KIEznEiRziRA5xIoc4kUOcyCFO5BAncogTOcSJHOJEDnEihziRQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KIEznEiRziRA5xIoc4kUOcyCFO5BC3e8fHn56eDjmPaZrmeT4+Ph61BvzhlRziRA5xd71cZ6udnZ2Nmtrb2zs6Ohq1xkAif9TOz89HTc3zLPLN5HId4kQOcSKHOJFDnMghTuQQJ3KIEznEiRziRA5xIoc4kUOcyCFO5BAncogTOcSJHOJEDnEihziRQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KIEznEiRziRA5xIoc4kUOcyCFO5BAncogTOcSJHOJ2H/oE+H/v379fLpej1k5OTkZNsRVEvgXW6/V6vX7os2BbuVyHOJFDnMghTuQQJ3KIEznEiRziRA5xIoc4kUOcyCFO5BAncogTOcSJHOJEDnEihziRQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KIEznEiRziRA5xIoc4kUOcyCFO5BAncogTOcSJHOJEDnEihziRQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KI233oE+hYLpdXV1ej1g4ODnZ2dkat8ZiJfJhv376dn5+PWjs+Pp7nedQaj5nLdYgTOcSJHOJEDnEihziRQ5zIIU7kECdyiBM5xIkc4kQOcSKHON9CY7zVavX169dRa/v7+4vFYtTaIyRyxlutVp8/fx61dnh4KPK7EDnb5MePH1++fBm19urVqxcvXoxa21giZ5usVquLi4tRay9fvhw1tcnceIM4kUOcyCFO5BD36G68XV1dLZfLUWvzPD979mzUGtyHRxf5xcXF2dnZqLU3b96InA3nch3iRA5xIoc4kUOcyCFO5BAncogTOcSJHOJEDnEihziRQ5zIIU7kELehXzW9vLz88OHDqLXFYnF0dDRqDbbLhkb++/fvgf/aYX9/f9QUbB2X6xAncogTOcSJHOJEDnEihziRQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KIEznEiRziRA5xIoc4kUOcyCFO5BAncojb0J9JgoyfP39eX1+PWjs4OLjtQ0QO0zRNnz59+v79+6i1t2/fPn/+/M/xx48fB/6w37t37277EJHDNE3T9fX1r1+/Rq2t1+tRU3fnPTnEiRziRA5xIoe4u954e/369ZDzmKbp6dOnN48HLs/zfPP4npYXi8Xe3t6o5Zt/jcPDw9VqNWr5Jk/ff8fb+PT9pScbdRsQGM7lOsSJHOJu95789PT0ns4D+Hu3+tybV3KIc+MN4rySQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KIEznEiRzi/gWUkIQC5cCBhQAAAABJRU5ErkJggg==">
+                            </td>
+                            <td>4.19</td>
+                            <td>5</td>
+                            <td>0.64</td>
+                            <td>0</td>
+                            <td>10</td>
+                        </tr>
+                        <tr>
+                            <td>Academic data at the end of 2nd semester</td>
+                            <td>
+                                <div class='tooltip'>Curricular units 2nd sem (grade)
+                                    <span class="tooltiptext">Grade average in the 2nd semester (between 0 and
+                                        20)</span>
+                                </div>
+                                <p>(numeric/continous)</p>
+                            </td>
+                            <td><img style="max-height: 50px"
+                                    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAUwAAADnCAIAAAD6oPiRAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAD30lEQVR4nO3dLU9jWwCG0QNpS3IUghoEaCz8/5+ABougIAiyptCOuGbkzGUThoe1NLzZKXk4px9Jjw6HwwR0HX/1AYDPJXKIEznEiRziRA5xIoc4kUOcyCFO5BAncogTOcSJHOJEDnEihziRQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KIEznEiRziRA5xIoc4kUOcyCFO5BAncohbfPUBCNput3d3d6PW1uv1xcXFqLUfyJUc4kQOcSKHOJFDnMghTuQQJ3KIEznEiRziRA5xIoc4kUOcyCFO5BAncogTOcSJHOJEDnEihziRQ5zIIU7kECdyiBM5xIkc4nyDyo+22WxGTS2Xy/V6PWqNgUT+oz09PY2amudZ5P8mt+sQJ3KIEznEiRziRA5xIoc4kUOcyCFO5BAncogTOcSJHOJEDnEihziRQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KIEznEiRziRA5xIoc4kUOcyCFO5BAncogTOcSJHOJEDnEihziRQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KIEznELT74+4+Pj0POMU3TarVar9ej1oD/fDTy5+fnIeeYpmmeZ5HDcG7XIU7kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KIEznEiRziRA5xIoc4kUOcyCFO5BAncogTOcSJHOJEDnEihziRQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KIEznEiRziRA5xIoc4kUOcyCFO5BAncogTOcSJHOJEDnEihziRQ5zIIU7kECdyiBM5xC2++gDwF/b7/dvb26i1xWJxfNy/zomc7+T19fXh4WHU2uXl5dnZ2ai1f1b/3xj8cCKHOJFDnMghTuQQJ3KIEznEiRziRA5xIoc4kUOcyCFO5BAncogTOcSJHOJEDnEihziRQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KI89XF38D9/f12ux21dn19PWqKb0Hk38DhcDgcDl99Cr4rt+sQJ3KIEznEiRziRA5xIoc4b6HBNE3Tbrd7f38ftXZycnJ0dDRq7YNEDtM0TZvN5uXlZdTa1dXVPM+j1j7oo5Gfn58POcc0TcvlctRUzHq93u12n7H8SX++5XI5cPn3WuZ5/qTl09PT1Wo1avn3R+Pt7W2/349a/h+HPPJRKmjzwhvEiRzi/u45+e3t7SedA/hzNzc3f/7DruQQ54U3iHMlhziRQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KIEznE/QLhC09TdD2nKwAAAABJRU5ErkJggg==">
+                            </td>
+                            <td>10.1522</td>
+                            <td>12.2</td>
+                            <td>0.518251</td>
+                            <td>0.00</td>
+                            <td>18.5714</td>
+                        </tr>
+                        <tr>
+                            <td>Academic data at the end of 2nd semester</td>
+                            <td>
+                                <div class='tooltip'>Curricular units 2nd sem (without evaluations)
+                                    <span class="tooltiptext">
+                                        Number of curricular units without evaluations in the 2nd semester
+                                    </span>
+                                </div>
+                                <p>(numeric/discrete)</p>
+                            </td>
+                            <td><img style="max-height: 50px"
+                                    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAUwAAADnCAIAAAD6oPiRAAAACXBIWXMAAA7EAAAOxAGVKw4bAAADo0lEQVR4nO3YMUpjUQCG0eQxkSQgimijK0jt/peQVYid2mkjvkwhiMUMjHiHcT7PqW6R/FwCHy/J8nA4LICu6V9fAPi7RA5xIoc4kUOcyCFO5BAncogTOcSJHOJEDnEihziRQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KIEznEiRziRA5xIoc4kUOcyCFO5BAncogTOcSJHOJEDnE/Pvn+/X4/5B6LxWK73e52u1FrwCtPcogTOcSJHOJEDnEihziRQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KIEznEiRziRA5xIoc4kUOcyCFO5BAncogTOcSJHOJEDnEihziRQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KIEznEiRziRA5xIoc4kUOcyCFO5BAncogTOcSJHOJEDnEihziRQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KIEznEiRziRA5xIoc4kUOcyCFO5BAncogTOcSJHOJEDnEihziRQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KIEznEiRziRA5xIoc4kUOcyCFO5BAncogTOcSJHOJEDnEihziRQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KIEznEiRziRA5xIoc4kUOcyCFO5BAncogTOcSJHOJEDnEihziRQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KIEznEiRziRA5xIoc4kUOcyCFO5BAncogTOcSJHOJEDnEihziRQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KIEznEiRziRA5xIoc4kUOcyCFO5BAncogTOcSJHOJEDnE//vUFfu35+fn+/n7U2mazOTk5GbX2O/M8Hw6HUWvTNC2Xy1FrfGdfN/Lb29tRaxcXF2+RPzw8DFy+uro6Ozt7Pd/c3Nzd3Y1a3u122+121Brf2Wcjv7y8HHKPxWKxWq3enwcuv69lvV6fn5+PWl6v12/n09PTo6OjUcvvP42np6eXl5dRy8fHx2/nx8fHUbPTNG02m9fzPM8Dl1er1fvP+b8zz/PAtWn68E/s5cBvmMAX5I83iBM5xH3sN/l+v/9L9wD+3PX19Z+/2JMc4vzxBnGe5BAncogTOcSJHOJEDnEihziRQ5zIIU7kECdyiBM5xIkc4kQOcSKHuJ8wnUJ0myyzBQAAAABJRU5ErkJggg==">
+                            </td>
+                            <td>0.14</td>
+                            <td>0</td>
+                            <td>5.08</td>
+                            <td>0</td>
+                            <td>12</td>
+                        </tr>
+
+                        <!-- Target -->
+                        <tr>
+                            <td>Target</td>
+                            <td>
+                                <div class='tooltip'>Target
+                                    <span class="tooltiptext">
+                                        Target. The problem is formulated as a three category classification task
+                                        (Dropout, Enrolled, and Graduate) at the end of the normal duration of the
+                                        course.
+                                    </span>
+                                    <p>(categorical)</p>
+                                </div>
+                            </td>
+                            <td><img style="max-height: 50px"
+                                    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAUwAAADnCAIAAAD6oPiRAAAACXBIWXMAAA7EAAAOxAGVKw4bAAADWElEQVR4nO3YoY7iYABG0Z1NBYgRteB4Bd7/EfAoJBZFgmjScZNZNxNgS+6co0rSP/kENy28zfP8B+j6u/QA4LlEDnEihziRQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KIEznEiRziRA5xIoc4kUOcyCFO5BAncogTOcSJHOJEDnEihziRQ5zIIU7kECdyiBM5xIkc4kQOccPSA+Afl8vldDotveJ17ff7nx7xJIc4kUOcyCFO5BAncogTOcSJHOJEDnEihziRQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KIEznEiRziRA5xIoc4kUOcyCFO5BAncogTOcSJHOJEDnEihziRQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KIEznEiRziRA5xIoc4kUOcyCFO5BAncogTOcSJHOJEDnEih7jhzvPH4/EhO5K22+37+/vSK/jt7o38er0+ZEfSNE1LTwCv61AncogTOcSJHOJEDnEihziRQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KIEznEiRziRA5xIoc4kUOcyCFO5BAncogTOcSJHOJEDnEihziRQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KIEznEiRziRA5xIoc4kUOcyCFO5BA3LD3gt7jdbtM0Lb3iRQ3DsFqtll6RJfL/5Hw+Xy6XpVe8qHEcd7vd0iuyvK5DnMghTuQQJ3KIEznEiRziRA5xIoc4kUOcyCFO5BAncogTOcSJHOJEDnEihziRQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KIEznEiRziRA5xIoc4kUOcyCFO5BAncogTOcSJHOJEDnEihziRQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KIEznEiRziRA5xIoc4kUOcyCFO5BAncogTOcSJHOJEDnEih7jhzvObzeYhO5LW6/Xn9TiOXz/y1Wq1+rxer9e+VI/1Ns/z0huAJ/K6DnEih7if/SY/HA5P2gF8336///7NnuQQ5483iPMkhziRQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KIEznEfQBjWin0Sh3JNwAAAABJRU5ErkJggg==">
+                            </td>
+                            <td></td>
+                            <td>Graduate</td>
+                            <td>1.03</td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+    </div>
+</body>
+
+</html>
